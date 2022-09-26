@@ -1,9 +1,17 @@
 package com.game.characters;
 
+import com.apps.util.Prompter;
+
+import java.util.Scanner;
+
 public abstract class Heroes   {
-    private String name;
-    private int age;
-    private int hp;
+
+    private int hp = 100;
+
+    Prompter prompter = new Prompter(new Scanner(System.in));
+    private String name = prompter.prompt("Please enter your name: ");
+    private String userInputAge  = prompter.prompt("Please enter your age:  ", "\\d+", "That is not a valid age!");
+    private int age = Integer.parseInt(userInputAge);
 
     public Heroes() {
     }
@@ -56,5 +64,13 @@ public abstract class Heroes   {
 
     public void setHp(int hp) {
         this.hp = hp;
+    }
+
+    @Override
+    public String toString() {
+        return
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", hp=" + hp ;
     }
 }

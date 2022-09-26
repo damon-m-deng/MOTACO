@@ -2,8 +2,7 @@ package com.game.characters;
 
 class Wizard extends Heroes {
 
-    private int mp;
-    private Heroes heroes;
+    private int mp = 100;
 
     public Wizard() {
 
@@ -32,5 +31,13 @@ class Wizard extends Heroes {
 
     public void setMp(int mp) {
         this.mp = mp;
+    }
+
+    @Override
+    public String toString() {
+        return "Class=Wizard, Name="+super.getName()  +
+                ", age=" + super.getAge() +
+                ", hp=" + super.getHp() + ", "+
+                "mp=" + getMp();
     }
 }

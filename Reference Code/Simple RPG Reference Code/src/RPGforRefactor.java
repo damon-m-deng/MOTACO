@@ -2,9 +2,6 @@
 
 //Reference Code Only, do not use for Production Code - Mark
 
-
-import org.junit.Test;
-
 import java.util.Random;
 import java.util.Scanner;
 
