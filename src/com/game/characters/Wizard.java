@@ -3,41 +3,48 @@ package com.game.characters;
 class Wizard extends Heroes {
 
     private int mp = 100;
+    private int attack = 5;
+    private String heroClass = "Wizard";
 
-    public Wizard() {
+    protected Wizard() {
 
     }
 
-    public Wizard(String name, int age, int hp, int mp) {
-        super(name, age, hp);
+    protected Wizard(String name, int hp, int mp) {
+        super(name, hp);
         setMp(mp);
     }
 
-    public void frostBolt(){
+    void frostBolt(){
+        int frostBoltDamage;
+
         System.out.println("Casting frost bolt");
     }
 
-    public void manaShield(){
+    void manaShield(){
         System.out.println("Casting mana shield");
     }
 
-    public void polymorph(){
+    void polymorph(){
         System.out.println("Casting polymorph");
     }
 
-    public int getMp() {
+    int getMp() {
         return mp;
     }
 
-    public void setMp(int mp) {
+    void setMp(int mp) {
         this.mp = mp;
+    }
+
+    String getHeroClass() {
+        return heroClass;
     }
 
     @Override
     public String toString() {
-        return "Class=Wizard, Name="+super.getName()  +
-                ", age=" + super.getAge() +
+        return "Hero Class="+this.getHeroClass()+super.getName()+
                 ", hp=" + super.getHp() + ", "+
-                "mp=" + getMp();
+                "mp=" + this.getMp();
     }
 }

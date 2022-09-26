@@ -10,16 +10,18 @@ public abstract class Heroes   {
 
     Prompter prompter = new Prompter(new Scanner(System.in));
     private String name = prompter.prompt("Please enter your name: ");
-    private String userInputAge  = prompter.prompt("Please enter your age:  ", "\\d+", "That is not a valid age!");
-    private int age = Integer.parseInt(userInputAge);
 
-    public Heroes() {
+    protected Heroes() {
     }
 
-    public Heroes(String name, int age, int hp) {
+    public Heroes(String name, int hp) {
         setName(name);
-        setAge(age);
         setHp(hp);
+    }
+
+    // Dice: randomly gets a number between 1-6
+    public int HeroesDice(){
+        return (int) ((Math.random() * 5) + 1);
     }
 
     public void attack(){
@@ -50,14 +52,6 @@ public abstract class Heroes   {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     public int getHp() {
         return hp;
     }
@@ -70,7 +64,6 @@ public abstract class Heroes   {
     public String toString() {
         return
                 "name='" + name + '\'' +
-                ", age=" + age +
                 ", hp=" + hp ;
     }
 }
