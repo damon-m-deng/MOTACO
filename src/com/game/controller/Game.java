@@ -30,7 +30,6 @@ public class Game {
         }
     }
 
-    // main loop for keep fighting
-    // exit - defeat the monster or killed by the monster
+    // main loop
 
 }
