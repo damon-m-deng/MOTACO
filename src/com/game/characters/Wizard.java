@@ -1,7 +1,5 @@
 package com.game.characters;
 
-import com.apps.util.SplashApp;
-
 class Wizard extends Heroes {
 
     private int mp;

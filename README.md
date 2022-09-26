@@ -8,4 +8,3 @@ You can play the game by cloning repo at:   https://github.com/damon-m-deng/MOTA
 
 ...and running the game in terminal or console of your choice.
 
-Enjoy!
