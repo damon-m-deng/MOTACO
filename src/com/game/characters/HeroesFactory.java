@@ -16,7 +16,11 @@ public class HeroesFactory {
     public static Heroes createHeroes(Scanner scanner){
         Heroes hero = null;
 
-        System.out.print("Please select your Character: 1=Wizard...");
+        System.out.println("Welcome: ");
+        System.out.println("Please select your Character: ");
+        System.out.println("1 = Wizard");
+        System.out.println("2 = Warrior (N/A)");
+        System.out.println("3 = Knight (N/A)");
 
         if("1".equals(scanner.nextLine())){
             hero = new Wizard();
