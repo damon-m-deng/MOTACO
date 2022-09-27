@@ -62,9 +62,9 @@ public class Game {
     }
 
     public static List<String> wordList(String input) {
-        String delims = "[ \t,.:;!?\"']+";
+        String deliminators = "[ \t,.:;!?\"']+";
         List<String> strList = new ArrayList<>();
-        String[] words = input.split(delims);         //regex
+        String[] words = input.split(deliminators);         //regex
 
         for (String word : words) {
             strList.add(word);
@@ -75,12 +75,12 @@ public class Game {
 
     public static String runCommand(String inputStr) {
         List<String> wl;
-        String s = "ok";
+        String s = "acknowledged";
         String lowerStr = inputStr.trim().toLowerCase();
 
         if (!lowerStr.equals("q")) {
             if (lowerStr.equals("")) {
-                s = "You have to enter a command!";
+                s = "Please enter a command!";
 
             } else {
                 wl = wordList(lowerStr);
@@ -103,7 +103,7 @@ public class Game {
             System.out.print(">");
             input = userInput.readLine();
             output = runCommand(input);
-            System.out.println("You entered '" + input + " ' ");
+            System.out.println("You typed '" + input + " ' ");
         } while (!"q".equals(input));
     }
 }
