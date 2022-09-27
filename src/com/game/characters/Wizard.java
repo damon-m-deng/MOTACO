@@ -43,7 +43,7 @@ public class Wizard extends Heroes {
 
     @Override
     public String toString() {
-        return "Hero Class="+this.getHeroClass()+super.getName()+
+        return "Hero Class="+this.getHeroClass()+" "+super.getName()+
                 ", hp=" + super.getHp() + ", "+
                 "mp=" + this.getMp();
     }

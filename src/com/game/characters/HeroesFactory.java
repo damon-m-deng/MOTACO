@@ -17,7 +17,7 @@ public class HeroesFactory {
 
     public static Heroes createHeroes(Scanner scanner) {
         Heroes hero = null;
-
+        while(true) {
         System.out.println("Welcome: ");
         System.out.println("Please select your Character: ");
         System.out.println("1 = Wizard");
@@ -26,22 +26,18 @@ public class HeroesFactory {
 
         String userInput = scanner.nextLine();
 
-        try {
             if ("1".equals(userInput)) {
-                hero = new Wizard();
+                hero = new Wizard();break;
 
             } else if ("2".equals(userInput)) {
-                hero = new WarriorPrincess();
+                hero = new WarriorPrincess();break;
 
             } else if ("3".equals(userInput)) {
-                hero = new WaywardKnight();
+                hero = new WaywardKnight();break;
 
             } else {
                 System.out.println("Please select a character by entering '1', '2', or '3'");
             }
-        }
-        catch (NullPointerException e){
-            e.printStackTrace();
         }
 
         // TODO: add other classes here, such as 2, 3...
