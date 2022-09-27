@@ -7,12 +7,22 @@ public class GiantRat extends Monsters {
     private int energy = 100;
     private int attack = 10;
 
-    void lickTheWound() {
+    public void lickTheWound() {
         if (energy >= 30) {
             hp = hp + 10;
             energy = energy - 30;
         } else {
             System.out.println("Failed...The Giant rat has run out of energy...");
         }
+    }
+
+    @Override
+    public void useSpecialAbility(){
+        lickTheWound();
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 }

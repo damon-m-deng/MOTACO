@@ -22,6 +22,11 @@ class SkeletonKnight extends Monsters{
         }
     }
 
+    @Override
+    public void useSpecialAbility(){
+
+    }
+
     public int getHp() {
         return hp;
     }
@@ -44,5 +49,10 @@ class SkeletonKnight extends Monsters{
 
     public void setAttack(int attack) {
         this.attack = attack;
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 }

@@ -21,6 +21,11 @@ public class Wizard extends Heroes {
         System.out.println("Casting frost bolt");
     }
 
+    @Override
+    public void useSpecialAbility(){
+        frostBolt();
+    }
+
     void manaShield(){
         System.out.println("Casting mana shield");
     }
