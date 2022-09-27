@@ -40,8 +40,6 @@ public class HeroesFactory {
                 System.out.println("Please select a character by entering '1', '2', or '3'");
             }
         }
-
-        // TODO: add other classes here, such as 2, 3...
         return hero;
     }
 }

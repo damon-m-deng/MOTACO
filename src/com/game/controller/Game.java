@@ -1,8 +1,6 @@
 package com.game.controller;
 
-import com.game.characters.Heroes;
-import com.game.characters.HeroesFactory;
-import com.game.characters.Wizard;
+import com.game.characters.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,6 +14,8 @@ import java.util.Scanner;
 public class Game {
     private Scanner scanner = new Scanner(System.in);
     Heroes hero = HeroesFactory.createHeroes(scanner);
+    private int rand = (int) ((Math.random() * 2) + 1);
+    Monsters monster = null;
 
     public void playerSetUp() {
         System.out.println("Hello " + hero.getName() + ". Let's start the game!");
@@ -35,8 +35,50 @@ public class Game {
             hero.setHp(((Wizard) hero).getMp() - 5);
             System.out.println(hero);
         } else if ("2".equals(userChoice)) {
-            System.out.println("The heroes went to the south.");
+            generateMonster();
+            System.out.println("You ran into a "+ monster.getName());
         }
+    }
+
+    public void fight(){
+        System.out.println("You have enter a fight!");
+        String userChoice = scanner.nextLine();
+
+        while(true){
+            if(hero.getHp()>0){
+                System.out.println("What do you do?");
+                System.out.println("1. Attack");
+                System.out.println("2. Use Special skills");
+                System.out.println("3. Use an item");
+
+                if ("1".equals(userChoice)) {
+                    attack();
+                }
+                else if ("2".equals(userChoice)) {
+                    useSpecialSkill();
+                }
+                else if("3".equals(userChoice)){
+                    useItems();
+                }
+            }
+        }
+    }
+
+    private void attack(){
+        hero.attack();
+        monster.attack();
+    }
+
+    private void generateMonster(){
+        monster = MonstersFactory.generateMonster(rand);
+    }
+
+    public void useSpecialSkill(){
+
+    }
+
+    public void useItems(){
+
     }
     
     /*
@@ -108,9 +150,7 @@ public class Game {
         } while (!"q".equals(input));
     }
 
-    public void fight(){
 
-    }
 }
 
 

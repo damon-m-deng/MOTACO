@@ -5,7 +5,7 @@ import java.util.Random;
 public class MonstersFactory {
 
     // generate a random number [1-3] to select one of the 3 kinds of monsters
-    private int r = (int) ((Math.random() * 2) + 1);
+
 
     private MonstersFactory(){
     }

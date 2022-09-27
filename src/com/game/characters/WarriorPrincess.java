@@ -30,6 +30,11 @@ class WarriorPrincess extends Heroes {
 
     }
 
+    @Override
+    public void useSpecialAbility(){
+        increaseHp();
+    }
+
     // accessor methods
     public int getRage() {
         return rage;

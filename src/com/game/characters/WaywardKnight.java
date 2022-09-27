@@ -13,6 +13,11 @@ public class WaywardKnight extends Heroes {
         setEnergy(energy);
     }
 
+    @Override
+    public void useSpecialAbility(){
+
+    }
+
     public void shredClassicalGuitar() {
         System.out.println("Shredding classical guitar and enemies are stunned");
     }
