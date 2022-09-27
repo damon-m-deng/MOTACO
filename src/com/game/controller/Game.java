@@ -1,7 +1,6 @@
 package com.game.controller;
 
-import com.game.characters.Heroes;
-import com.game.characters.HeroesFactory;
+import com.game.characters.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -33,6 +32,10 @@ public class Game {
         }
     }
 
+/*
+ * Classic Main Loop
+ */
+
     public static void main(String[] args) throws IOException {
         BufferedReader userInput;
         String input;
@@ -43,7 +46,6 @@ public class Game {
             input = userInput.readLine();
             System.out.println("You entered '" + input + " ' ");
         }   while (input != "q");
-
     }
-   
+
 }
