@@ -18,6 +18,7 @@ public class HeroesFactory {
     public static Heroes createHeroes(Scanner scanner) {
         Heroes hero = null;
         while(true) {
+
             System.out.println("Welcome: ");
             System.out.println("Please select your Character: ");
             System.out.println("1 = Wizard");
