@@ -1,6 +1,6 @@
 package com.game.characters;
 
-class Wizard extends Heroes {
+public class Wizard extends Heroes {
 
     private int mp = 100;
     private int attack = 5;
@@ -15,7 +15,7 @@ class Wizard extends Heroes {
         setMp(mp);
     }
 
-    void frostBolt(){
+    public void frostBolt(){
         int frostBoltDamage;
 
         System.out.println("Casting frost bolt");
@@ -29,11 +29,11 @@ class Wizard extends Heroes {
         System.out.println("Casting polymorph");
     }
 
-    int getMp() {
+    public int getMp() {
         return mp;
     }
 
-    void setMp(int mp) {
+    public void setMp(int mp) {
         this.mp = mp;
     }
 
