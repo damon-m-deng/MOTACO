@@ -11,6 +11,5 @@ class GameController {
         Game game = new Game();
         game.playerSetUp();
         game.firstMission();
-
     }
 }

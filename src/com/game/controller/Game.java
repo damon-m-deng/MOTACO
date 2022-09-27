@@ -5,10 +5,7 @@ import com.game.characters.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 
 public class Game {
@@ -30,57 +27,82 @@ public class Game {
 
         String userChoice = scanner.nextLine();
         if ("1".equals(userChoice)) {
-            System.out.println("The hero went to the north... Stepped on a banana peel, and fell " +
-                    "on their bottom. Ouch...");
-            hero.setHp(((Wizard) hero).getMp() - 5);
-            System.out.println(hero);
+            hero.setHp(hero.getHp() - 5);
+            System.out.println("The hero went to the north... Stepped on a banana peel, and fell on their bottom. Ouch...");
+            generateMonster();
+            System.out.println("You ran into a " + monster.getName());
+            fight();
         } else if ("2".equals(userChoice)) {
             generateMonster();
-            System.out.println("You ran into a "+ monster.getName());
+            System.out.println("You ran into a " + monster.getName());
+            fight();
         }
     }
 
-    public void fight(){
+    public void fight() {
         System.out.println("You have enter a fight!");
-        String userChoice = scanner.nextLine();
-
-        while(true){
-            if(hero.getHp()>0){
-                System.out.println("What do you do?");
-                System.out.println("1. Attack");
-                System.out.println("2. Use Special skills");
-                System.out.println("3. Use an item");
-
+        System.out.println("-----------------------");
+        showCombatMessage();
+        while (hero.hp > 0) {
+            String userChoice = scanner.nextLine();
+            if (hero.getHp() > 0) {
                 if ("1".equals(userChoice)) {
                     attack();
-                }
-                else if ("2".equals(userChoice)) {
+                } else if ("2".equals(userChoice)) {
                     useSpecialSkill();
-                }
-                else if("3".equals(userChoice)){
+                } else if ("3".equals(userChoice)) {
                     useItems();
                 }
             }
+            showCombatMessage();
         }
+        gameover();
     }
 
-    private void attack(){
-        hero.attack();
-        monster.attack();
+    private void showCombatMessage() {
+
+        System.out.println("What do you do?");
+        System.out.println("1. Attack");
+        System.out.println("2. Use Special skills");
+        System.out.println("3. Use an item");
     }
 
-    private void generateMonster(){
+    private void gameover() {
+        System.out.println("You died...");
+    }
+
+    private void victory() {
+        System.out.println("Yay");
+    }
+
+    private void attack() {
+
+        int monsterHp = monster.getMonsterHP();
+        monsterHp = monsterHp - hero.getAttackPower();
+        monster.setMonsterHP(monsterHp);
+        System.out.println(hero.getName() + " attacked the " + monster.getName() + ", " + monster.getName() + " has " + monsterHp + " HP left!");
+        hero.setAttackPower(((int) ((Math.random() * 9) + 1)));
+
+
+        int heroHp = hero.getHp();
+        heroHp = heroHp - monster.getAttackPower();
+        hero.setHp(heroHp);
+        System.out.println(monster.getName() + " attacked the " + hero.getName() + ", " + hero.getName() + " has " + heroHp + " HP left!");
+        monster.setAttackPower(((int) ((Math.random() * 9) + 1)));
+    }
+
+    private void generateMonster() {
         monster = MonstersFactory.generateMonster(rand);
     }
 
-    public void useSpecialSkill(){
+    public void useSpecialSkill() {
 
     }
 
-    public void useItems(){
+    public void useItems() {
 
     }
-    
+
     /*
      *  Main Loop
      */
@@ -133,7 +155,6 @@ public class Game {
         }
         return s;
     }
-
 
 
     public static void main(String[] args) throws IOException {

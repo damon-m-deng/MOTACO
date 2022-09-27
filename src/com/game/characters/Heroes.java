@@ -2,11 +2,13 @@ package com.game.characters;
 
 import com.apps.util.Prompter;
 
+import javax.management.monitor.MonitorSettingException;
 import java.util.Scanner;
 
 public abstract class Heroes   {
 
-    private int hp = 100;
+    public int hp = 100;
+    private int attackPower = (int) ((Math.random() * 9) + 1);
 
     Prompter prompter = new Prompter(new Scanner(System.in));
     private String name = prompter.prompt("Please enter your name: ");
@@ -58,6 +60,14 @@ public abstract class Heroes   {
 
     public void setHp(int hp) {
         this.hp = hp;
+    }
+
+    public int getAttackPower() {
+        return attackPower;
+    }
+
+    public void setAttackPower(int attackPower) {
+        this.attackPower = attackPower;
     }
 
     @Override
