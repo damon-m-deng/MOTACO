@@ -18,13 +18,13 @@ public class HeroesFactory {
     public static Heroes createHeroes(Scanner scanner) {
         Heroes hero = null;
         while(true) {
-        System.out.println("Welcome: ");
-        System.out.println("Please select your Character: ");
-        System.out.println("1 = Wizard");
-        System.out.println("2 = Warrior Princess");  //princess
-        System.out.println("3 = Wayward Knight");   //wayward knight
+            System.out.println("Welcome: ");
+            System.out.println("Please select your Character: ");
+            System.out.println("1 = Wizard");
+            System.out.println("2 = Warrior Princess");  //princess
+            System.out.println("3 = Wayward Knight");   //wayward knight
 
-        String userInput = scanner.nextLine();
+            String userInput = scanner.nextLine();
 
             if ("1".equals(userInput)) {
                 hero = new Wizard();break;
