@@ -2,6 +2,7 @@ package com.game.controller;
 
 import com.game.characters.Heroes;
 import com.game.characters.HeroesFactory;
+import com.game.characters.Wizard;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -31,7 +32,7 @@ public class Game {
         if ("1".equals(userChoice)) {
             System.out.println("The hero went to the north... Stepped on a banana peel, and fell " +
                     "on their bottom. Ouch...");
-            hero.setHp(hero.getHp() - 5);
+            hero.setHp(((Wizard) hero).getMp() - 5);
             System.out.println(hero);
         } else if ("2".equals(userChoice)) {
             System.out.println("The heroes went to the south.");
