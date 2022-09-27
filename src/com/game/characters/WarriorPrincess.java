@@ -13,11 +13,13 @@ class WarriorPrincess extends Heroes {
 
     public WarriorPrincess(String name, int hp, int rage) {
         super(name, hp);
+        this.rage= rage;
     }
 
     // methods
     void increaseHp() {
-
+        this.setHp(this.getHp()+20);
+        rage = rage - 50;
     }
 
     void increaseDamage() {

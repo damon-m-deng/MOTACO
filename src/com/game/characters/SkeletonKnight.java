@@ -8,4 +8,10 @@ class SkeletonKnight extends Monsters{
     private int attack = 10;
 
     // skills
+    void fear() {
+        if (rage >= 5) {
+            hp += 10;
+            rage -= 15;
+        }
+    }
 }
