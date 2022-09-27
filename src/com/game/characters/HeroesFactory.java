@@ -19,8 +19,8 @@ public class HeroesFactory {
         System.out.println("Welcome: ");
         System.out.println("Please select your Character: ");
         System.out.println("1 = Wizard");
-        System.out.println("2 = Warrior (N/A)");
-        System.out.println("3 = Knight (N/A)");
+        System.out.println("2 = Warrior (N/A)");  //princess
+        System.out.println("3 = Knight (N/A)");   //wayward knight
 
         if("1".equals(scanner.nextLine())){
             hero = new Wizard();
