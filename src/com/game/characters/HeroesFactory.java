@@ -8,26 +8,43 @@ import java.util.Scanner;
 
 public class HeroesFactory {
 
+    private Prompter prompter;
+
     // internal use only, prevents user creating the object
-    private HeroesFactory(){
+    private HeroesFactory() {
 
     }
 
-    public static Heroes createHeroes(Scanner scanner){
+    public static Heroes createHeroes(Scanner scanner) {
         Heroes hero = null;
 
         System.out.println("Welcome: ");
         System.out.println("Please select your Character: ");
         System.out.println("1 = Wizard");
-        System.out.println("2 = Warrior (N/A)");  //princess
-        System.out.println("3 = Knight (N/A)");   //wayward knight
+        System.out.println("2 = Warrior Princess");  //princess
+        System.out.println("3 = Wayward Knight");   //wayward knight
 
-        if("1".equals(scanner.nextLine())){
-            hero = new Wizard();
+        String userInput = scanner.nextLine();
+
+        try {
+            if ("1".equals(userInput)) {
+                hero = new Wizard();
+
+            } else if ("2".equals(userInput)) {
+                hero = new WarriorPrincess();
+
+            } else if ("3".equals(userInput)) {
+                hero = new WaywardKnight();
+
+            } else {
+                System.out.println("Please select a character by entering '1', '2', or '3'");
+            }
+        }
+        catch (NullPointerException e){
+            e.printStackTrace();
         }
 
         // TODO: add other classes here, such as 2, 3...
-
         return hero;
     }
 }

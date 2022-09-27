@@ -107,6 +107,10 @@ public class Game {
             System.out.println("You typed '" + input + " ' ");
         } while (!"q".equals(input));
     }
+
+    public void fight(){
+
+    }
 }
 
 
