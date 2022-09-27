@@ -19,8 +19,17 @@ public class HeroesFactory {
         Heroes hero = null;
         while(true) {
 
-            System.out.println("Welcome: ");
-            System.out.println("Please select your Character: ");
+//            System.out.println("Welcome: ");
+//            System.out.println("Please select your Character: ");
+//            System.out.println("1 = Wizard");
+//            System.out.println("2 = Warrior Princess");  //princess
+//            System.out.println("3 = Wayward Knight");   //wayward knight
+
+            System.out.println("Greetings, my Hero! \nWhat should I call you?");
+            User user = new User();
+            user.setUserName(scanner.nextLine());
+            System.out.printf("Welcome, %s!%nPlease choose a hero of your choice!", user.getUserName());;
+            System.out.println();
             System.out.println("1 = Wizard");
             System.out.println("2 = Warrior Princess");  //princess
             System.out.println("3 = Wayward Knight");   //wayward knight
