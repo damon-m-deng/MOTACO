@@ -100,7 +100,8 @@ public class Game {
     }
 
     private void showCombatMessage() {
-
+        System.out.println("An enemy appeared! Your stats are: ");                                                          //added
+        System.out.println("Hero: " + hero.getName() + " HP: " + hero.getHp() + " Attack Power: " + hero.getAttackPower());      //added
         System.out.println("What do you do?");
         System.out.println("1. Attack");
         System.out.println("2. Use Special skills");
