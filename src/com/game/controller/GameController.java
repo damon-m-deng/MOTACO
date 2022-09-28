@@ -9,7 +9,6 @@ import java.util.Scanner;
 class GameController {
     public static void main(String[] args) {
         Game game = new Game();
-        game.playerSetUp();
-        game.firstMission();
+        game.start();
     }
 }
