@@ -2,6 +2,7 @@ package com.game.controller;
 
 import com.game.characters.*;
 
+import java.awt.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -12,11 +13,17 @@ public class Game {
     User user;
     Heroes hero;
     Monsters monster = null;
+    AsciiGen asciiGen;
 
     private Scanner scanner = new Scanner(System.in);
     private int rand = (int) ((Math.random() * 2) + 1);
+    private String title = "MOTACO";
+    private String gameOverText = "GAME OVER";
 
     public void start(){
+        asciiGen = AsciiFactory.createAscii();
+        //print title ascii
+        loadAsciiTitle(title);
         welcomeScreen();
 
         user = UserFactory.createUser(scanner);
@@ -68,6 +75,11 @@ public class Game {
         user.setUserName(scanner.nextLine());
         System.out.printf("Welcome, %s!%nPlease choose a hero of your choice!", user.getUserName());
         System.out.println();
+    }
+    //method to generate ascii for the text
+    public void loadAsciiTitle(String text) {
+        AsciiGen.Settings settings = asciiGen.new Settings(new Font("SansSerif", Font.BOLD, 16), text.length() * 30, 30); // 30 pixel width per character
+        asciiGen.drawString(text, "|", settings);
     }
 
     // first mission
@@ -156,6 +168,8 @@ public class Game {
 
     private void gameover() {
         System.out.println(user.getUserName() + ", You died...");
+        //print gameover ascii
+        loadAsciiTitle(gameOverText);
     }
 
     private void victory() {
