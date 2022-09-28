@@ -17,12 +17,52 @@ public class Game {
     private int rand = (int) ((Math.random() * 2) + 1);
 
     public void start(){
+        welcomeScreen();
+
         user = UserFactory.createUser(scanner);
         playerSetUp();
 
         hero = HeroesFactory.createHeroes(scanner);
         firstMission();
+
     }
+
+    //welcome screen with ascii art
+    public void welcomeScreen() {
+
+        System.out.println("Welcome to the game!");
+        System.out.println("\n" +
+                "     e    e        ,88~-_   ~~~888~~~      e       e88~-_    ,88~-_             " +
+                " e      888~-_   Y88b      / 888~~  888b    | ~~~888~~~ 888   | 888~-_   888~~  " +
+                "\n" +
+                "    d8b  d8b      d888   \\     888        d8b     d888   \\  d888   \\         " +
+                "   d8b     888   \\   Y88b    /  888___ |Y88b   |    888    888   | 888   \\  " +
+                "888___ \n" +
+                "   d888bdY88b    88888    |    888       /Y88b    8888     88888    |          " +
+                "/Y88b    888    |   Y88b  /   888    | Y88b  |    888    888   | 888    | 888   " +
+                " \n" +
+                "  / Y88Y Y888b   88888    |    888      /  Y88b   8888     88888    |         / " +
+                " Y88b   888    |    Y888/    888    |  Y88b |    888    888   | 888   /  888    " +
+                "\n" +
+                " /   YY   Y888b   Y888   /     888     /____Y88b  Y888   /  Y888   /         " +
+                "/____Y88b  888   /      Y8/     888    |   Y88b|    888    Y88   | 888_-~   888 " +
+                "   \n" +
+                "/          Y888b   `88_-~      888    /      Y88b  \"88_-~    `88_-~         /  " +
+                "    Y88b 888_-~        Y      888___ |    Y888    888     \"8__/  888 ~-_  " +
+                "888___ \n" +
+                "                                                                                " +
+                "                                                                                \n");
+
+        System.out.println("MOTACO - Chapter 1");
+        System.out.println("A strange evil has taken over the land...");
+        System.out.println("Monsters have stolen all of our Tacos and Momos!");
+        System.out.println("We need your help to get them back!");
+        System.out.println();
+
+    }
+
+
+
     public void playerSetUp() {
         System.out.println("Greetings, my Hero! \nWhat should I call you?");
         user.setUserName(scanner.nextLine());
@@ -56,8 +96,7 @@ public class Game {
         showCombatMessage();
         while (hero.hp > 0) {
             String userChoice = scanner.nextLine();
-            showCombatMessage();
-            if (hero.getHp() > 0 && monster.getMonsterHP() > 0) {
+            if (hero.getHp() > 0) {
                 if ("1".equals(userChoice)) {
                     attack();
                 } else if ("2".equals(userChoice)) {
@@ -65,12 +104,8 @@ public class Game {
                 } else if ("3".equals(userChoice)) {
                     useItems();
                 }
-            }
-            else{
-                if(hero.getHp()>0 && monster.getMonsterHP()<=0){
-                    victory();
-                }
-            }
+            }                  dropItem(); //does this work TODO: test
+            showCombatMessage();
         }
         gameover();
     }
@@ -124,10 +159,7 @@ public class Game {
     }
 
     private void victory() {
-        System.out.println("You defeated the " + monster.getName() + "!");
         System.out.println("Yay");
-        dropItem();
-        System.out.println();
     }
 
     private void attack() {
@@ -153,15 +185,14 @@ public class Game {
 
     public void useSpecialSkill() {     //TODO: add special skill
         System.out.println("You used your special skill!");
-        if (hero instanceof Wizard) {
-            ((Wizard) hero).useSpecialAbility();
-        } else if (hero instanceof WarriorPrincess) {
-            ((WarriorPrincess) hero).useSpecialAbility();
-        } else if (hero instanceof WaywardKnight) {
-            ((WaywardKnight) hero).useSpecialAbility();
-        }
     }
-
+//        if (hero instanceof Wizard) {
+//            ((Wizard) hero).useSpecialSkill();
+//        } else if (hero instanceof WarriorPrincess) {
+//            ((WarriorPrincess) hero).useSpecialSkill();
+//        } else if (hero instanceof WaywardKnight) {
+//            ((WaywardKnight) hero).useSpecialSkill();
+//        }
 
 
 
