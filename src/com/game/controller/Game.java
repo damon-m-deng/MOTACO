@@ -108,18 +108,26 @@ public class Game {
         showCombatMessage();
         while (hero.hp > 0) {
             String userChoice = scanner.nextLine();
-            if (hero.getHp() > 0) {
+            if (hero.getHp() > 0 && monster.getMonsterHP()>0) {
                 if ("1".equals(userChoice)) {
                     attack();
                 } else if ("2".equals(userChoice)) {
                     useSpecialSkill();
                 } else if ("3".equals(userChoice)) {
                     useItems();
+                    continueGame();
                 }
-            }                  dropItem(); //does this work TODO: test
+            }
+            else if(monster.getMonsterHP()<=0){
+                dropItem();
+            }
             showCombatMessage();
         }
         gameover();
+    }
+
+    private void continueGame() {
+
     }
 
     public void dropItem() {
@@ -173,7 +181,8 @@ public class Game {
     }
 
     private void victory() {
-        System.out.println("Yay");
+        System.out.println("-------Victory!!!-------");
+        dropItem();
     }
 
     private void attack() {
@@ -197,16 +206,16 @@ public class Game {
         monster = MonstersFactory.generateMonster(rand);
     }
 
-    public void useSpecialSkill() {     //TODO: add special skill
+    public void useSpecialSkill() {
         System.out.println("You used your special skill!");
+        if (hero instanceof Wizard) {
+            ((Wizard) hero).useSpecialAbility();
+        } else if (hero instanceof WarriorPrincess) {
+            ((WarriorPrincess) hero).useSpecialAbility();
+        } else if (hero instanceof WaywardKnight) {
+            ((WaywardKnight) hero).useSpecialAbility();
+        }
     }
-//        if (hero instanceof Wizard) {
-//            ((Wizard) hero).useSpecialSkill();
-//        } else if (hero instanceof WarriorPrincess) {
-//            ((WarriorPrincess) hero).useSpecialSkill();
-//        } else if (hero instanceof WaywardKnight) {
-//            ((WaywardKnight) hero).useSpecialSkill();
-//        }
 
 
 

@@ -15,23 +15,27 @@ public class Wizard extends Heroes {
         setMp(mp);
     }
 
-    public void frostBolt(){
-        System.out.println("The Wizard casts the spell: frost bolt, the damage increases by 20%.");
-        int frostBoltDamage = (int) (getAttackPower()*1.2);
+    public void frostBolt() {
+        System.out.println("The Wizard casts the spell: frost bolt, the damage increases by 100%.");
+        int frostBoltDamage = getAttackPower() * 2;
         setAttackPower(frostBoltDamage);
-        mp = mp - 20;
+        if (mp > 20) {
+            mp = mp - 20;
+        } else {
+            System.out.println("Not enough mana...");
+        }
     }
 
     @Override
-    public void useSpecialAbility(){
+    public void useSpecialAbility() {
         frostBolt();
     }
 
-    void manaShield(){
+    void manaShield() {
         System.out.println("Casting mana shield");
     }
 
-    void polymorph(){
+    void polymorph() {
         System.out.println("Casting polymorph");
     }
 
@@ -49,8 +53,8 @@ public class Wizard extends Heroes {
 
     @Override
     public String toString() {
-        return "Hero Class="+this.getName()+" "+super.getName()+
-                ", hp=" + super.getHp() + ", "+
+        return "Hero Class=" + this.getName() + " " + super.getName() +
+                ", hp=" + super.getHp() + ", " +
                 "mp=" + this.getMp();
     }
 }
