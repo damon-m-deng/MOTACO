@@ -1,5 +1,7 @@
 package com.game.characters;
 
+import java.util.Scanner;
+
 public class Wizard extends Heroes {
 
     private int mp = 100;
@@ -15,9 +17,29 @@ public class Wizard extends Heroes {
         setMp(mp);
     }
 
-    public void frostBolt() {
+    @Override
+    public void useSpecialAbility() {
+        while(true) {
+            System.out.println("What Wizard skill you would like to use?");
+            System.out.println("1: Frost Bolt");
+            System.out.println("2. Mana Shield");
+            Scanner scanner = new Scanner(System.in);
+            String userInput = scanner.nextLine();
+            if ("1".equals(userInput)) {
+                frostBolt();
+                break;
+            } else if ("2".equals(userInput)) {
+                manaShield();
+                break;
+            } else {
+                System.out.println("please select a skill, [1/2]");
+            }
+        }
+    }
+
+    private void frostBolt() {
         System.out.println("The Wizard casts the spell: frost bolt, the damage increases by 100%.");
-        int frostBoltDamage = getAttackPower() * 2;
+        int frostBoltDamage = getAttackPower();
         setAttackPower(frostBoltDamage);
         if (mp > 20) {
             mp = mp - 20;
@@ -26,17 +48,15 @@ public class Wizard extends Heroes {
         }
     }
 
-    @Override
-    public void useSpecialAbility() {
-        frostBolt();
-    }
-
     void manaShield() {
-        System.out.println("Casting mana shield");
-    }
-
-    void polymorph() {
-        System.out.println("Casting polymorph");
+        System.out.println("The Wizard casts the spell: manaShield. The wizard gained a shield");
+        int shield = this.getMp()* 2;
+        if (mp > 30) {
+            hp = hp+shield;
+            mp = mp - 30;
+        } else {
+            System.out.println("Not enough mana...");
+        }
     }
 
     public int getMp() {

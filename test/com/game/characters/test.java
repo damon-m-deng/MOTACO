@@ -10,7 +10,6 @@ public class test {
     public void testMe() {
         System.out.println();
         Wizard wiz = new Wizard();
-        wiz.frostBolt();
 
     }
 }
