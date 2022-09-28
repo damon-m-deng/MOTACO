@@ -1,5 +1,7 @@
 package com.game.characters;
 
+import java.util.Scanner;
+
 public class WarriorPrincess extends Heroes {
 
     private int rage = 200;
@@ -16,15 +18,28 @@ public class WarriorPrincess extends Heroes {
         this.rage= rage;
     }
 
-    // methods
-    void increaseHp() {
-        this.setHp(this.getHp()+20);
-        rage = rage - 50;
-        System.out.println("The WarriorPrincess casts the spell: Heal, her HP increases by 20.");
+    // generate HP by consuming rage
+    void heal() {
+        System.out.println("The Warrior Princess casts the spell: Heal, her HP increases by 20.");
+        if(rage > 50){
+            this.setHp(this.getHp()+20);
+            rage = rage - 50;
+        }
+        else{
+            System.out.println("Not enough rage");
+        }
     }
 
-    void increaseDamage() {
-
+    // increase attack power by 100%
+    void enrage() {
+        System.out.println("The Warrior Princess is now enraged, her damage increases by 100%.");
+        int enragedDamage = getAttackPower() *2;
+        setAttackPower(enragedDamage);
+        if (rage > 20) {
+            rage = rage - 20;
+        } else {
+            System.out.println("Not enough rage...");
+        }
     }
 
     void decreaseDamageTaken() {
@@ -33,7 +48,23 @@ public class WarriorPrincess extends Heroes {
 
     @Override
     public void useSpecialAbility(){
-        increaseHp();
+        while(true) {
+            System.out.println("What Wizard skill you would like to use?");
+            System.out.println("1: Heal");
+            System.out.println("2. Enrage");
+            System.out.println("Warrior Princess Rage = "+ getRage());
+            Scanner scanner = new Scanner(System.in);
+            String userInput = scanner.nextLine();
+            if ("1".equals(userInput)) {
+                heal();
+                break;
+            } else if ("2".equals(userInput)) {
+                enrage();
+                break;
+            } else {
+                System.out.println("please select a skill, [1/2]");
+            }
+        }
     }
 
     // accessor methods

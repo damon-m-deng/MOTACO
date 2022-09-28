@@ -200,6 +200,7 @@ public class Game {
         System.out.println(monster.getName() + " attacked the " + hero.getName() + ", " + hero.getName() + " has " + heroHp + " HP left!");
         monster.setAttackPower(((int) ((Math.random() * 9) + 1)));
 
+        generateResource();
     }
 
     private void generateMonster() {
@@ -214,6 +215,22 @@ public class Game {
             ((WarriorPrincess) hero).useSpecialAbility();
         } else if (hero instanceof WaywardKnight) {
             ((WaywardKnight) hero).useSpecialAbility();
+        }
+    }
+
+    private void generateResource(){
+        if (hero instanceof Wizard) {
+            int wizardMp = ((Wizard) hero).getMp();
+            wizardMp += 10;
+            ((Wizard) hero).setMp(wizardMp);
+        } else if (hero instanceof WarriorPrincess) {
+            int warriorPrincessRage = ((WarriorPrincess) hero).getRage();
+            warriorPrincessRage += 15;
+            ((WarriorPrincess) hero).setRage(warriorPrincessRage);
+        } else if (hero instanceof WaywardKnight) {
+            int kightEnergy = ((WaywardKnight) hero).getEnergy();
+            kightEnergy+=15;
+            ((WaywardKnight) hero).setEnergy(kightEnergy);
         }
     }
 
