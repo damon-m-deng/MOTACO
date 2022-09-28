@@ -8,7 +8,8 @@ import java.util.Scanner;
 
 class GameController {
     public static void main(String[] args) {
+        Console.clear();        //added console clear but need to use actual terminal
         Game game = new Game();
         game.start();
     }
-}
+}   
