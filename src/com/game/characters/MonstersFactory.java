@@ -16,188 +16,163 @@ public class MonstersFactory {
         if(rand == 1){
             monster = new GiantRat();
             System.out.println(
-                    " MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWWNNNNWWWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n" +
-                    "MMMMMMMMMMMMMMMMMMMMMMMMMWWNXKOkxool" +
-                            ":::cccclldxxkO0KNWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n" +
-                    "MMMMMMMMMMMMMMMMMMMMNKOxoc:,''.....................';" +
-                            ":lokKNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n" +
-                    "MMMMMMMMMMMMMMMWX0kxl:'.................................';" +
-                            "ldOXWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n" +
-                    "MMMMMMMMMMMMW0o:,'.........................................." +
-                            ".':dKWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n" +
-                    "MMMMMMMMMMNOl,..................................................," +
-                            "cdk0NWMMMMMNX0O0XWMMMMMMMMMMMMMMMMM\n" +
-                    "MMMMMMMMMXo'......................................................." +
-                            ".'cdk0XXOl,,'':d0NMMMMMMMMMMMMMMM\n" +
-                    "MMMMMMMMKc...............................................................,,'" +
-                            "........;d0NMMMMMMMMMMMM\n" +
-                    "MMMMMMMKc..................................................................." +
-                            "..........,codxk0NMMMMMM\n" +
-                    "MMMMMMNd'..................................................................." +
-                            "................'ckNWMMM\n" +
-                    "MMMMMWO,...................................................................." +
-                            "...................,cxKN\n" +
-                    "MMMMMKc....................................................................." +
-                            ".....................':l\n" +
-                    "MMMWKc......................................................................" +
-                            "........................\n" +
-                    "MNOl,......................................................................." +
-                            "........................\n" +
-                    "kl,........................................................................." +
-                            "......................'.\n" +
-                    "............................................................................" +
-                            "........':ol:;;;;;:ccldk\n" +
-                    ".'.........................................................................." +
-                            "......,oONMWWNNNNNWWWMMM\n" +
-                    "xkkxl:,'.........................';coddoooooc:;,,;:::'.....................'" +
-                            "....;d0NMMMMMMMMMMMMMMMM\n" +
-                    "MMMMMWX0xoc::;:::::loc,....';;:lkKNWMMMMMMMMMWNNNNWWNk;...................," +
-                            "xx,..:KMMMMMMMMMMMMMMMMMM\n" +
-                    "MMMMMMMMMWWWNNNNNNWWWKl,..'l0XNWMMMMMMMMMMMMMMMMMMMMMWKd:'..............." +
-                            ".:KWKo'.:oxOKNMMMMMMMMMMMMM\n" +
-                    "MMMMMMMMMMMMMMMMMMMMMMXkl;,':dO00XWMMMMMMMMMMMMMMMMMMMMMXklc:::;'.........;" +
-                            "0MMNx:,...,okXMMMMMMMMMMM\n" +
-                    "MMMMMMMMMMMMMMMMMMMMMMMMMWXx,....':ldONMMMMMMMMMMMMMMMMMMMMMWWWNXKOdc;'....;" +
-                            "xXWMWN0xlok0XMMMMMMMMMMM\n" +
-                    "kKNWMMMMMMMMMMMMMMMMMMMMMMMWk;','.,,,dNMMMMMMMMMMMMMMMMMMMMMMMMMMMMWNX0kd:'" +
-                            ".':oooodxONMMMMMMMMMMMMMM\n" +
-                    ",;cldxO00KK0KKKK00000Okkkkkkxl;::," +
-                            "cccoxxxxxkOOKXNWWMMMMMMMMMMMMMMMMMMMMMMNOl,,ldl:;:xNMMMMMMMMMMMMMM\n" +
-                    "XKOkxoollcccccllccloxxxkOOO00OO0000000000OkOkkOOOOOO000XWMMMMMMMMMMMMMMMMMMWXKWMMWWWMMMMMMMMMMMMMMMM\n" +
-                    "MMMMMMWNNNNNNNNNNNWWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWWWNXKKWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n" +
-                    "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM");
+                    "MMMMMMMMMMMMMMMMMMMMMWNXK0OkdddddxxxO00XXNWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n" +
+                            "MMMMMMMMMMMMMMMWX0xol:;,'..............',;" +
+                            "cldkKWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n" +
+                            "MMMMMMMMMMWX0kdl;'...........................';" +
+                            "cokXWMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n" +
+                            "MMMMMMMMWKx:'.....................................;" +
+                            "oOXNWMMMMMMWWWMMMMMMMMMMMMMMM\n" +
+                            "MMMMMMMNd,..'........................................," +
+                            ":ok0NN0dcccd0NMMMMMMMMMMMM\n" +
+                            "MMMMMMKl'................................................';;'...." +
+                            ".':d0NWMMMMMMMM\n" +
+                            "MMMMMXl............................................................." +
+                            ".';clokXWMMM\n" +
+                            "MMMMWx'............................................................." +
+                            ".......;oOXW\n" +
+                            "MMMW0;.............................................................." +
+                            ".........':d\n" +
+                            "MMWO:..............................................................." +
+                            "............\n" +
+                            "Xkl,................................................................" +
+                            "............\n" +
+                            ",.................................................................." +
+                            ".,;,'''',,,:l\n" +
+                            "..................................................................;" +
+                            "d0XK00000KKXW\n" +
+                            "kOkdc;'...................,codxxxddoc::cll:.................'...;" +
+                            "kXWMMMMMMMMMMMM\n" +
+                            "MMMMWN0kxddddddxxc'..,lodOXWMMMMMMMMMWWWMMXd,..............;kk:" +
+                            ".:ONWWMMMMMMMMMMM\n" +
+                            "MMMMMMMMMMMMMMMMWKd:,;oOXXNWMMMMMMMMMMMMMMMWXkc;,,,'.......:0MXd;,;" +
+                            ":okXWMMMMMMMM\n" +
+                            "MMMMMMMMMMMMMMMMMMWNKx:',,:ldONMMMMMMMMMMMMMMMWNXXK0kdl;'." +
+                            ".'cONNXOxllkKWMMMMMMMM\n" +
+                            "dOKNWWMMMMMMMMMMWWWWWNOc,,',;l0NNWWWMMMMMMMMMMMMMMMMMMWXKOd;" +
+                            "'':olllxXMMMMMMMMMMM\n" +
+                            "llooodxxddxxxddxxkkkkkkdoooddxkkkkkOO00KKKXNWMMMMMMMMMMMMMWXkldOkddONMMMMMMMMMMM\n" +
+                            "MWNXK0OOkkkOOO0KXXNWWWWWWWWWWWWWWWNNNXXKKKKKXWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n" +
+                            "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM");
         }
         else if(rand == 2){
             monster = new SkeletonKnight();
             System.out.println(
-                    " WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
-                    "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWMWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
-                    "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWMWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
-                    "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWMMMWWWWWWWWWWNWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMWWWWWWXOx0NNNNNNNWWWWWWMMMMMMMMMMMMMMMMMMWOllxKNWNNNNNNNNNNWWWWWWWMMWWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMMWWKd:':kXNNNNNNNWWWWWMMMMMMMMMMMMMMMMMMMWO:;" +
-                            "cdKNNNNNNNNNNNWWWWWWMMMWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMWWWkc:;" +
-                            "oKNNNXNNNNWWWWWWN0OO0XWMMMMMMMMMMMMMWO" +
-                            ":ccoKNNNNNNNNNNWWWWWWMMMWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMW0loc;" +
-                            "kNNNNNNNNNNWWNXkloxdlcxKNWMMMMMMMMMMWk" +
-                            ":lxlxNNNNNNNNNNWWWWWWMMMWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMWxlOd:l0NNNXNNNNNKkdd:;" +
-                            "kKKk::xxxONWMMMMMWKxod00ldNNNNNNNNNNWWWWWWMMMWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMWklOX0xoox0KXKX0ddkKXlcO00OclXWKkxkOkOkkxxOXWNxcONNNNNNNNNNWWWWWWMMMWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMMXol0NNKkdoccc:cxXWWKcl0KK0lcKWMMXdcll" +
-                            ":xNWMNKdckNNNNNXXNNNNWWWWWWMMMWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMWWKocdOKXKdclclONWWNO;" +
-                            "l0KK0l:OWMMMNkoddoxOkdclONNNNNNNXNNNNWWWWWWMMMWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMMWWXxc;::;cl:lOXNWWXx;o0kk0o;xXMMMMXxlol,,;" +
-                            "lkXWWNNNNNXNNNNNWWWWWWMMMWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMWWWWWKxc'.;;:dKNNWNKo,oXNNXo;oKWMMMXkoc;" +
-                            "'c0NWWWWNNNNNNNNNNNWWWWWWMMMWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMWWWWWWNXd'';:oOXWWNOc;dkxxkd;lONMMW0dlc;" +
-                            "lXWWWWWNNNNNNNNNNNNWWWWWWMMMWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMWWWWNNNNKc,;;:okkxdo::kNNNNOloxxkkxl:;:;" +
-                            "oXMWWWWNNNNNNNNNNNNWWWWWWMMMWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMWWWWWNNNk,.',:ldkxxk0XX00K0XWX0OKX0kdl;" +
-                            ".'dNWWWWWNNNNNNNNNNNWWWWWWMMMWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMWWWWWNN0;  'cloxkdccdxdl;:loodl:ldo:cc,. ;" +
-                            "KMWWWWNNNNNNNNNNNWWWWWWMMMWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMWWWWWNN0,  ..',:::;::'ckxxOl,llcc::cl:,." +
-                            ".cXWWWWWNNNNNNNNNNNWWWWWWMMMWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMWWWWWNN0: .'cc'..',;,,x0OO0x;,;'....cxc..;" +
-                            "OWWWWWNNNNNNNNNNNWWWWWWMMMWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMWWWWWXO:.. ,o'       .cxoodc.       'd:  " +
-                            ".:ONWWWNNNNNNNNNNNWWWWWWMMMWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMMWWWW0:..  'oc.      .:,..,l:..'',;cxOc..'," +
-                            "c0WWWNNNNNNNNNNNWWWWWWMMMWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMWWWWNk;.  .cO00kxxxxxkl....l0K0KXNWWWNk'.;" +
-                            "olkWWWNNNNNNNNNNNWWWWWWMMMWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMWWWWXl... .:x0KXNNNWW0:';:,:0NNXXKK0ko,." +
-                            ".'lkXWWWNNNNNNNNNNNWWWWWWMMMWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMWWWWNxl:,.  .';:cccx0KKKXNXXNKkc;c:,....';" +
-                            "lONWWWNNNNNNNNNNNWWWWWWMMMWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMWWWWWNKk:..   .;c..oxO00OOO0Okd,:ko' .',;" +
-                            "lKWWWWNNNNNNNNNNNNWWWWWWMMMWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMWWWWWNNK: ..   cO;.,:cllolllc:,.cKo....." +
-                            ".lXWWWWWNNNNNNNNNNNWWWWWWMMMWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMMWWWWNNO'...;, cO,  ..',;;,'.. .c0l.::.'.;" +
-                            "0MWWWWNNNNNNNNNNNWWWWWWMMMWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMMWWWWNNk'...c; :O:..         ..,d0:.od,..;" +
-                            "0WWWWWNNNNNNNNNNNWWWWWWMMMWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMWWWWWNNk'...:' .coc;',,,;;,;;;cdo:..ok;..," +
-                            "kWWWWWNNNNNNNNNNNWWWWWWMMMWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMWWWWWNNx...'ol.  .okdolloolodk0o..,:xKc..;" +
-                            "0WWWWWNNNNNNNNNNNWWWWWWMMMWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMWWWWWNNx'..;O0:.. .:oolclllcll:.." +
-                            ".xKNXl''cKWWWWWNNNNNNNNNNNWWWWWWMMMWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMWWWWWNNO,..cKXOxc. ..    .  ...;;cKMW0c,.;" +
-                            "KWWWWWNNNNNNNNNNNWWWWWWMMMWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMWWWWWNN0; .:ONNXd,cl.  ..,..'.,kKKWMM0c." +
-                            ".:KWWWWWNNNNNNNNNNNWWWWWMMMMWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMWWWWWNN0; .;xNNNXk0x;,,'.',lkk0WMMMMMWOl;" +
-                            "xWWWWWWNNNNNNNNNNNWWWWWMMMMWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMWWWWWNNNx''dKNNNWWWXKXO,..," +
-                            "kWMMMMMMMMMMWNNWWWWWWNNNNNNNNNNNWWWWWMMMWWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMWWWWWNNNOxOXNNNNNWWWWWx..';" +
-                            "dNMMMMMMMMMMMMMMWWWWWNNNNNNNNNNNWWWWWWMWWWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMWWWWWNNNNNNNNNNNNWWWWWK;..," +
-                            "kWMMMMMMMMMMMMMMWWWWWNNNNNNNNNNNWWWWWWWWWWWWWWWW\n" +
-                    "WWWWWWWMMMMMMMMMMMMMMMMMMWWWWWNNNNNNNNNNNNWWWWWWKdoONMMMMMMMMMMMMMMWWWWWWNNNNNNNNNNNWWWWWWWWWMWWWWWW\n" +
-                    "WWWWWWWWWWMMMMMMMMMMMMMMWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
-                    "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
-                    "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW");
+                    "WWWWWWWWWWWWWWWWWWWWWWWWWWWMWWWWWWWWWWWWWWWWWWWWMWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWMWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWMMWWWWWWWWWMWWWWWWWNNWWWWWWWWWWWMMMMMMMMMMMMMMW0kKNWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWMMMMMMMMMMMMMMWWXOocxXNNNNNWWWWMMMMMMMMMMMMMMMW0c" +
+                            ":d0NNNNXNNNNNWWWWMMWWWWWW\n" +
+                            "WWWWWWMMMMMMMMMMMMMMWKd" +
+                            "::xXNXNNNNWWWWNK000NMMMMMMMMMMMKlclkNNNNNNNNNWWWWMMWWWWWW\n" +
+                            "WWWWWWMMMMMMMMMMMMMMNxocl0NNNNNNNWNKOolddlokKNMMMMMMMW0ldddKNNXNNNNNWWWWMMWWWWWW\n" +
+                            "WWWWWWMMMMMMMMMMMMMMXdxOooOKXNNNXOkkdcdKKdcxOkOKNNNK0kkOKxdKNNNNNNNNWWWWMMWWWWWW\n" +
+                            "WWWWWWMMMMMMMMMMMMMMWkdKX0xxdddodkKWOcxXKxlOWWKxodod0XWNkoONNNNNNNNNWWWWMMWWWWWW\n" +
+                            "WWWWWWMMMMMMMMMMMMMMMXxox0KOl" +
+                            "::lONWNxckKKkcxNMMNkdddkOkoo0NNNNNNNNNNWWWWMMWWWWWW\n" +
+                            "WWWWWWMMMMMMMMMMMMMWWWNOlc;;:clONNWKlcO00OcoXMMMXdlc,;" +
+                            "oOXWNNNNNNNNNNWWWWMMWWWWWW\n" +
+                            "WWWWWWMMMMMMMMMMMMMMMWWNXOc',:o0NWN0cckOOkcc0WMWKxl;" +
+                            ":kNWWWNNNNNNNNNNWWWWMMWWWWWW\n" +
+                            "WWWWWWMMMMMMMMMMMMMMWWWWNN0c,;" +
+                            "cx00ko:lO000ocxOOOdc::dNMWWWNNNNNNNNNNWWWWMMWWWWWW\n" +
+                            "WWWWWWMMMMMMMMMMMMMMWWWWNNO;.,:oxkxdOKK000KKkk0Oxo:'," +
+                            "kWWWWNNNNNNNNNNWWWWMMWWWWWW\n" +
+                            "WWWWWWMMMMMMMMMMMMMMWWWWNXc .,:codccodollooolcddl:;." +
+                            ".lNWWWNNNNNNNNNNWWWWMMWWWWWW\n" +
+                            "WWWWWWMMMMMMMMMMMMMMWWWNNXl  ';,'',:;ckOOkc:c;;,;cc." +
+                            ".oNWWWNNNNNNNNNNWWWWMMWWWWWW\n" +
+                            "WWWWWWMMMMMMMMMMMMMMWWWWXk;..c:    ..;xxxd;..   .:l..," +
+                            "kNWWNNNNNNNNNNWWWWMMWWWWWW\n" +
+                            "WWWWWWMMMMMMMMMMMMMMWWWNk;.  :c..   .;:,,::''',;cxd'" +
+                            ".':kNWNNNNNNNNNNWWWWMMWWWWWW\n" +
+                            "WWWWWWMMMMMMMMMMMMMMWWWXo'  .d00OOkkOd'..'dKKXNWWNO," +
+                            ".:okNWNNNNNNNNNNWWWWMMWWWWWW\n" +
+                            "WWWWWWMMMMMMMMMMMMMMWWWKl'...,oxkkO0KkodddOX0xxxoc'..;" +
+                            "dKWWNNNNNNNNNNWWWWMMWWWWWW\n" +
+                            "WWWWWWMMMMMMMMMMMMMMWWWNKkc..  .;,'lkKXKXXKOo,cl'..';" +
+                            "oKNWWNNNNNNNNNNWWWWMMWWWWWW\n" +
+                            "WWWWWWMMMMMMMMMMMMMMWWWWNXl... .ol.,cloddol:,'xx'.." +
+                            ".'dNWWWNNNNNNNNNNWWWWMMWWWWWW\n" +
+                            "WWWWWWMMMMMMMMMMMMMMWWWWNK:..,,.lo. ...''....'xd,:;." +
+                            ".lXWWWNNNNNNNNNNWWWWMMWWWWWW\n" +
+                            "WWWWWWMMMMMMMMMMMMMMWWWWNK:..,,.:o;........',ld:'ol." +
+                            ".cXWWWNNNNNNNNNNWWWWMMWWWWWW\n" +
+                            "WWWWWWMMMMMMMMMMMMMMWWWWW0;..;:. 'cdlcclllodxo'';xd," +
+                            ".cKWWWNNNNNNNNNNWWWWMMWWWWWW\n" +
+                            "WWWWWWMMMMMMMMMMMMMMWWWWN0;..oO:...:oc:cccclc..l0Nk," +
+                            "'oNWWWNNNNNNNNNNWWWWMMWWWWWW\n" +
+                            "WWWWWWMMMMMMMMMMMMMMWWWWNKc..xX0x,...  ......:l0MNx," +
+                            ".lNWWWNNNNNNNNNNWWWWMMWWWWWW\n" +
+                            "WWWWWWMMMMMMMMMMMMMMWWWWNXc..oKNKdoo...',';:oKNWMWO;" +
+                            ".dWWWWNNNNNNNNNNWWWWMMWWWWWW\n" +
+                            "WWWWWWMMMMMMMMMMMMMMWWWNNNx',xXNNNX0kx:." +
+                            ".:0NWMMMMMWKOXWWWWNNNNNNNNNNWWWWMMWWWWWW\n" +
+                            "WWWWWWMMMMMMMMMMMMMMWWWWNN0xOXNNNWWWWK;" +
+                            ".':0MMMMMMMMMMMWWWWNNNNNNNNNNWWWWWWWWWWWW\n" +
+                            "WMWWWWMMMMMMMMMMMMMMWWWWNNNNNNNNNWWWWNo" +
+                            "''lXMMMMMMMMMMMWWWWWNNNNNNNNNWWWWWWWWWWWW\n" +
+                            "WWWWWWMMMMMMMMMMMMMMWWWWNNNNNNNNWWWWWMNK0XWMMMMMMMMMMWWWWWWWNNNNNNNWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWMMWWWWMWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW");
         }
         else if(rand == 3){
             monster = new Mermaid();
             System.out.println(
-                    "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n" +
-                    "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n" +
-                    "MMMMMN0O0NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n" +
-                    "MMMMWkc:'lNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n" +
-                    "MMMMMXx::kWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWWXKNWMMMMM\n" +
-                    "MMMMNd'':kNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWNKkxooKWMMMMM\n" +
-                    "MMMMWXKKKXWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWXKNMMMMMN0kkxdodKMMMMMM\n" +
-                    "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWK0OkXMMMMW0xkkOOOONMMMMMM\n" +
-                    "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNOxxkkKWMMMN0kxkxddxKMMMMMM\n" +
-                    "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMW0xxkdx0NMMMXOOxdoccoOWMMMMM\n" +
-                    "MMMMMMMMMMMMMMMMMMWNNNNNWMMMNKXWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWKOOkxxkkKMMMXOkxdoldkOXWMMMM\n" +
-                    "MMMMMMMMMMMMMMWNX0xdxxxO00KNNKNWWMWNXXWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNOOkl;cc:kWMMN0kkxkkxkkONMMMM\n" +
-                    "MMMMMMMMMMMMWNK0kxdolodxkxxxkO000XX00XWWMMWXXNMMMMMMMMMMMMMMMMMMMMMMMMMXkxdl" +
-                            ":lccxKNMW0xdoxOddkOKWMMM\n" +
-                    "MMMMMMMMMMMMXOxxkxkxddxkOko:;;" +
-                            "ccclollOWMMWXKK0XMMMMMMMMMMMMMMMMMMMMMMMMNOdocllccodkXW0dooodoclldNMMM\n" +
-                    "MMMMMMMMMMMN0xxxkkkkxddkkxlclddl" +
-                            ":ccccdKXNNX00OKMMMMMMMMMMMMMMMMMMMMMMMMWKkxoolcclodxKX0OkococlcoXMMM" +
-                            "\n" +
-                    "MMMMMMMMMMWXkxddxkkxdkkdxkddxxxdllcccoxdxxxk0NWNNWMMMMMMMMMMMMMMMMMMMMMMWKkkxoddoxxdxkkkkkxdxkxkXMMM\n" +
-                    "MMMMMMMMMMXOOOxdxkOxdkOxxxdxOxdll" +
-                            ":::::lxkkkkOXNXNWMMMMMMMMMMMMMMMMMMMMMMMMNK0xxd;;;::,,;" +
-                            ":dxdxxdkNMMM\n" +
-                    "MMMMMMMMMWKOkkxxxxkkkxkxxddxkkkooodddxxOOOkddkKXWMMMMMMMMMMMMMMMMMMMMMMMMMMMWXOdlddoollloxxddooOWMMM\n" +
-                    "MMMMMMMMMMWKOOOOdcckxcccllodxO0OOOOkkOOkkkOkdk0KKKKXK0KXNWMMMMMMMMMMMMMMMMMMMMWNXK0kocclllcllcl0WMMM\n" +
-                    "MMMMMMMMMMMWWWNKxlcodollodOKXWWWWNX0OxxkxxOdc:,;" +
-                            "ccllld00KNWMMMMMMMMMMMMMMMMMMMMMMMWNKkxo:::::d0NMMMM\n" +
-                    "MMMMMMMMMMMMMMMWXkoloxOxdx0XXXNMMMMWXkdkkdxxdl" +
-                            ":lollox0XXXXWMMMMMMMMMMMMMMMMMMMMMMMMMMMN0dl:co0WMMMMM\n" +
-                    "MMMMMMMMMMMMMMMMMWXOkOXKkxddodkXWWWWWOdkxldkkolx0OxONWNXKXWMMMMMMMMMMMMMMMMMMMMMMMMMMMMW0old0WMMMMMM\n" +
-                    "MMMMMMMMMMMMMMMMMMMMWX0OOkxxxxkOKNNNX0OKK0000KKXNX0KNMMWWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWXOolxXMMMMMMM\n" +
-                    "MMMMMMMMMMMMMMMMMMWNKd:cllclccc" +
-                            ":xKWWWWMMWXXNWMMWNNXNWWWNNWWMMMMMMMMMMMMMMMMMMMMMMMMWXOkkxdxKWMMMMMMM\n" +
-                    "MMMMMMMMMMMMMMMMMWKkxdlooollcclldk0NMMMMMWNWMNXX0kxxxkkkxO0O0XNWMMMMMMMMMMMMMMMMWNKkxxdooxKWMMMMMMMM\n" +
-                    "MMMMMMMMMMMMMMMMMNOddkkxxxxkOddxddxkOXNWWWWXKkxxkkxollclllllodxO0KXNWWWWWWWNNXKOkkxdxkOkx0WMMMMMMMMM\n" +
-                    "MMMMMMMMMMMMMMMMNOddkXKkkxox0xdoxkxddddkkdddddxdxkxl:c;" +
-                            ":::::lokxllooxkxddoloookxdkxdddkkKWMMMMMMMMMM\n" +
-                    "MMMMMMMMMMMMMMMWKxdONMWOxkxxxkOddddddxxolclodkOkdxkxdolllldxdddoolcoddddolccclooooodkxkKWMMMMMMMMMMM\n" +
-                    "MMMMMWNXNNX0O0XKkoxXWWXkddk0kxkc:;::',::llckkxkkkxxc',;;;,c;'::;c;," +
-                            "lkddxkkdolcllcccldONWMMMMMMMMMMMM\n" +
-                    "MMMWNKxlodo::okkkkkxkxddod0WWNKkxocccloodxkOkkkkxxxollodoooloolcllokOOxxdoooodkxxkOKNWMMMMMMMMMMMMMM\n" +
-                    "MMMMMN0kxddxOKXKXKK000O0KXWMMMWWNNKOO0KK0OOK00K0OO00kxkkxkOkxxxkkoclllccc" +
-                            "::ox0KKXNWMMMMMMMMMMMMMMMMM\n" +
-                    "MMMMMMMWNNNWMMMMMMMMMMMMMMMMMMMMMMMMMMMMWWWWWWWWNWWWNXKKKKKKOkOO0OxxkkkkkO0XWWMMMMMMMMMMMMMMMMMMMMMM\n" +
-                    "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWWWWWWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n" +
-                    "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n" +
-                    "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n" +
-                    "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM");
+                    "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWWWWMWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWWWNK000O00KNWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWXOkxxxxxxxx0NWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWXOxxxxxxxxxx0NWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWWWWWWWWMWWWXOxxxxxxxxxxxKWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWWWWWWWWMWWN0xxxxxxxxxxxx0WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWNXOxxxxxxxxxxxxx0WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWWWWWNXK0OkxxxxxxxxxxxxxONWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWWNNXKOkxxxxxxxxxxxxxxxOXWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWNXK0kxxxxxxxxxxxxxxxxkXWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWXOkxxxxxxxxxxxxxxxxxxxOKNWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWKkkkxxxxxxxxxxxxxxxxxxxxxkO0KNWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWW0OKOxxxxxxxxxxxxxxxxxxxxxxxxxkOKWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWMNKKOxxxxxxxxxxxxxxxxxxxxxxxxxxxkXWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWX0kxxxxxxxxxxxxxxxxxxxxxxOkxxxxkXWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWNX0kxkxxxxxxxxxxxxxxxxxxxk0NXOxxxxkXWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWNX00O00kxxkkxxxxxxxxxxxxxx0WMWN0kxxxkXWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWWNNKxkK0xxxxxxxxxxxxxxONWWMWNXKkxxkXWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWMMWWWKkK0xxxxkxxxxxxxxxxONWWWWWWWKkxxkXWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWMWWWNKOxxxkKN0xxxxxxxxxkKWMWWWWWWXkxxk0NWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWWWWNOxxk0XWMNOxxxxxxxxxkOXNWWWWWWXOxxxkXWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWWWNOxk0XWWWWW0xxxxxxxxxxxxO0XNWWWWN0kxxxKWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWWNOkOXWWWWWWN0xxxxxxxxxxxxxxkO0XWWWWX0kxkKNWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWMWWWWWWKOOKNWWWWWWWW0xxxxxxxxxxxxxxxxxkXWWWWWN0kkKNWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWXKK0Okk0NWWWWWWWWWW0xxkxxxxxxxxxxxxxxxkXWWWWWWN0kOXNNNNWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWX0O00OkOXNWWWWWWWWWWWKkkkkxxxxxxxxxxxxxxx0WWWWWWMWKkxkO00OO0NWWWWWWWWWWWWWWWW\n" +
+                            "WWWXKNWXXNWWWWWWWWWWWWWWKkkkxxxxxxxxxxxxxxxxONWWWWWWWWNXKKNNX00XWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWXkxkxxxxxxxxxxxxxxxxOWWWWWWWWWWWWWWWWWNWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWNOxkkxxxxxxxxxxxxxxx0WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWW0kkkkxxxxxxxxxxxxxkKWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWWXkxkxxxxxxxxxxxxxxONWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWWNOxxxkxxxxxxxxxxxxKWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWWWKkxkkxxxxxxxxxxxONWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWWWNOkkxxxxxxxxxxxxKWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWWWWKkkkkxxxxxxxxxkXWWWWWWWWWWWWWWWNNWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWWWWNOxkkxxxxxxxxxONWWWWWWWWWWWWWX0KNWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWWWWWKkkkxxxxxxxxk0WWWWWWWWWMWWW0xkXMWWWWWWWWWWWWWWWWXNMW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWWWWMNOxkxxxxxxxkOXWWWWWWWWWWWN0xxkXWWWWWWWWWWWWWWWW0ONWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWXkxkxxxxxxOKNMWWWWWWWWWWKxxxxONWWWWWWWWWWWWMWKxONWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWWWMWWW0kkxxxxxxOXNMWWWWWWWWWW0xxxxxOXWMWWWWWWWWWWXkxkXWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWWWMWWWXOxxxxxxxOXNWWWWWWWWWWWKkxxxxxONWWWWWWWWWWXkxxxKWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWKkxxxxxxOKNMWWWMWWWWWWNOxxxxxkXWWNNWWWWX0kxxxx0WW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWKkxxxxxk0XWWWWWWWMWWWW0xxxxxO00OkkOOOkkxxxxxxKWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWMN0xxxxxxkKWWWWWWWWWWWWKxxxxxxxxxxxxxxxxxxxxxONWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWNOxxxxxxkXWWWWWWWWMWWKkxxxxxxxxxxxxxxxxxxxOXWWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWN0xxxxxxkKWWWWWMWWWWKxxxxxxxxxxxxxxxxxxk0NWWWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWNKOxxxxxxOKNWWWWWN0kxkkkkkxxxxxxxxxxk0XWWWWWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWNKOkkxxxxkOO00Oxxk0XNWNNXK00000KKXNWWWWWWWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWMWWWWWWNNK0OOkkkkkO0XNWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWMWWWWWNNNNNWWMWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWMWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n" +
+                            "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW");
         }
 
         return monster;
