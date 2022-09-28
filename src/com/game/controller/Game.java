@@ -3,10 +3,7 @@ package com.game.controller;
 import com.game.characters.*;
 
 import java.awt.*;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.*;
+import java.util.Scanner;
 
 
 public class Game {
@@ -20,7 +17,7 @@ public class Game {
     private String title = "MOTACO";
     private String gameOverText = "GAME OVER";
 
-    public void start(){
+    public void start() {
         asciiGen = AsciiFactory.createAscii();
         //print title ascii
         //loadAsciiTitle(title);
@@ -58,7 +55,8 @@ public class Game {
                 "    Y88b 888_-~        Y      888___ |    Y888    888     \"8__/  888 ~-_  " +
                 "888___ \n" +
                 "                                                                                " +
-                "                                                                                \n");
+                "                                                                                " +
+                "\n");
 
         System.out.println("MOTACO - Chapter 1");
         System.out.println("A strange evil has taken over the land...");
@@ -69,16 +67,17 @@ public class Game {
     }
 
 
-
     public void playerSetUp() {
         System.out.println("Greetings, my Hero! \nWhat should I call you?");
         user.setUserName(scanner.nextLine());
         System.out.printf("Welcome, %s!%nPlease choose a hero of your choice!", user.getUserName());
         System.out.println();
     }
+
     //method to generate ascii for the text
     public void loadAsciiTitle(String text) {
-        AsciiGen.Settings settings = asciiGen.new Settings(new Font("SansSerif", Font.BOLD, 16), text.length() * 30, 30); // 30 pixel width per character
+        AsciiGen.Settings settings = asciiGen.new Settings(new Font("SansSerif", Font.BOLD, 16),
+                text.length() * 30, 30); // 30 pixel width per character
         asciiGen.drawString(text, "|", settings);
     }
 
@@ -91,7 +90,8 @@ public class Game {
         String userChoice = scanner.nextLine();
         if ("1".equals(userChoice)) {
             hero.setHp(hero.getHp() - 5);
-            System.out.println("The hero went to the north... Stepped on a banana peel, and fell on their bottom. Ouch...");
+            System.out.println("The hero went to the north... Stepped on a banana peel, and fell " +
+                    "on their bottom. Ouch...");
             generateMonster();
             System.out.println("You ran into a " + monster.getName());
             fight();
@@ -108,7 +108,7 @@ public class Game {
         showCombatMessage();
         while (hero.hp > 0) {
             String userChoice = scanner.nextLine();
-            if (hero.getHp() > 0 && monster.getMonsterHP()>0) {
+            if (hero.getHp() > 0 && monster.getMonsterHP() > 0) {
                 if ("1".equals(userChoice)) {
                     attack();
                 } else if ("2".equals(userChoice)) {
@@ -117,13 +117,38 @@ public class Game {
                     useItems();
                     continueGame();
                 }
-            }
-            else if(monster.getMonsterHP()<=0){
+            } else if (monster.getMonsterHP() <= 0) {
                 dropItem();
             }
             showCombatMessage();
         }
         gameover();
+        continueAfterDeath();
+    }
+
+
+    //method to continue game after hero dies
+    public void continueAfterDeath() {
+        //if hero dies, ask if they want to continue
+        System.out.println("You have died. Do you want to continue?");
+        System.out.println("1. Yes");
+        System.out.println("2. No");
+        String userChoice = scanner.nextLine();
+        if ("1".equals(userChoice)) {
+            start();
+        } else if ("2".equals(userChoice)) {
+            System.out.println("Are you sure?");
+            System.out.println("1. Yes");
+            System.out.println("2. No");
+            String userChoice2 = scanner.nextLine();
+            if ("1".equals(userChoice2)) {
+                System.out.println("Thank you for playing!");
+                System.exit(0);
+            } else if ("2".equals(userChoice2)) {
+                continueAfterDeath();
+            }
+        }
+
     }
 
     private void continueGame() {
@@ -133,7 +158,8 @@ public class Game {
     public void dropItem() {
         int rand = (int) ((Math.random() * 2) + 1);
         if (rand == 1) {
-            System.out.println("The enemy dropped a MOMO which is a delicious treat!"); //TODO: make these items enum
+            System.out.println("The enemy dropped a MOMO which is a delicious treat!"); //TODO:
+            // make these items enum
             System.out.println("Do you want to pick it up?");
             System.out.println("1. Yes");
             System.out.println("2. No");
@@ -171,7 +197,6 @@ public class Game {
         System.out.println("2. Use Special skills");
         System.out.println("3. Use an item");
     }
-
 
 
     private void gameover() {
@@ -218,7 +243,7 @@ public class Game {
         }
     }
 
-    private void generateResource(){
+    private void generateResource() {
         if (hero instanceof Wizard) {
             int wizardMp = ((Wizard) hero).getMp();
             wizardMp += 10;
@@ -229,11 +254,10 @@ public class Game {
             ((WarriorPrincess) hero).setRage(warriorPrincessRage);
         } else if (hero instanceof WaywardKnight) {
             int kightEnergy = ((WaywardKnight) hero).getEnergy();
-            kightEnergy+=15;
+            kightEnergy += 15;
             ((WaywardKnight) hero).setEnergy(kightEnergy);
         }
     }
-
 
 
     public void useItems() {

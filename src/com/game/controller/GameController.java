@@ -11,5 +11,6 @@ class GameController {
         Console.clear();        //added console clear but need to use actual terminal
         Game game = new Game();
         game.start();
+
     }
-}                                                  
+}
