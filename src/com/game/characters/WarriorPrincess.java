@@ -1,6 +1,6 @@
 package com.game.characters;
 
-class WarriorPrincess extends Heroes {
+public class WarriorPrincess extends Heroes {
 
     private int rage = 200;
     private int attack = 10;
@@ -20,6 +20,7 @@ class WarriorPrincess extends Heroes {
     void increaseHp() {
         this.setHp(this.getHp()+20);
         rage = rage - 50;
+        System.out.println("The WarriorPrincess casts the spell: Heal, her HP increases by 20.");
     }
 
     void increaseDamage() {
