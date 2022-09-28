@@ -56,7 +56,8 @@ public class Game {
         showCombatMessage();
         while (hero.hp > 0) {
             String userChoice = scanner.nextLine();
-            if (hero.getHp() > 0) {
+            showCombatMessage();
+            if (hero.getHp() > 0 && monster.getMonsterHP() > 0) {
                 if ("1".equals(userChoice)) {
                     attack();
                 } else if ("2".equals(userChoice)) {
@@ -64,8 +65,12 @@ public class Game {
                 } else if ("3".equals(userChoice)) {
                     useItems();
                 }
-            }                  dropItem(); //does this work TODO: test
-            showCombatMessage();
+            }
+            else{
+                if(hero.getHp()>0 && monster.getMonsterHP()<=0){
+                    victory();
+                }
+            }
         }
         gameover();
     }
@@ -119,7 +124,10 @@ public class Game {
     }
 
     private void victory() {
+        System.out.println("You defeated the " + monster.getName() + "!");
         System.out.println("Yay");
+        dropItem();
+        System.out.println();
     }
 
     private void attack() {
@@ -145,14 +153,15 @@ public class Game {
 
     public void useSpecialSkill() {     //TODO: add special skill
         System.out.println("You used your special skill!");
+        if (hero instanceof Wizard) {
+            ((Wizard) hero).useSpecialAbility();
+        } else if (hero instanceof WarriorPrincess) {
+            ((WarriorPrincess) hero).useSpecialAbility();
+        } else if (hero instanceof WaywardKnight) {
+            ((WaywardKnight) hero).useSpecialAbility();
+        }
     }
-//        if (hero instanceof Wizard) {
-//            ((Wizard) hero).useSpecialSkill();
-//        } else if (hero instanceof WarriorPrincess) {
-//            ((WarriorPrincess) hero).useSpecialSkill();
-//        } else if (hero instanceof WaywardKnight) {
-//            ((WaywardKnight) hero).useSpecialSkill();
-//        }
+
 
 
 

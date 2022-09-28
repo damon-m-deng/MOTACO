@@ -16,9 +16,10 @@ public class Wizard extends Heroes {
     }
 
     public void frostBolt(){
-        int frostBoltDamage;
-
-        System.out.println("Casting frost bolt");
+        System.out.println("The Wizard casts the spell: frost bolt, the damage increases by 20%.");
+        int frostBoltDamage = (int) (getAttackPower()*1.2);
+        setAttackPower(frostBoltDamage);
+        mp = mp - 20;
     }
 
     @Override
