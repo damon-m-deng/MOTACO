@@ -73,43 +73,45 @@ public class Game {
     public void dropItem() {
         int rand = (int) ((Math.random() * 2) + 1);
         if (rand == 1) {
-            System.out.println("The enemy dropped a potion!");
+            System.out.println("The enemy dropped a MOMO which is a delicious treat!"); //TODO: make these items enum
             System.out.println("Do you want to pick it up?");
             System.out.println("1. Yes");
             System.out.println("2. No");
             String userChoice = scanner.nextLine();
             if ("1".equals(userChoice)) {
-                System.out.println("You picked up the potion!");
+                System.out.println("You picked up the MOMO!");
                 hero.setHp(hero.getHp() + 10);
             } else if ("2".equals(userChoice)) {
-                System.out.println("You left the potion on the ground.");
+                System.out.println("You left the MOMO on the ground. Maybe you prefer Tacos?");
             }
         } else if (rand == 2) {
-            System.out.println("The enemy dropped smelly cheese!");
+            System.out.println("The enemy dropped 2 TACOS!");
             System.out.println("Do you want to pick it up?");
             System.out.println("1. Yes");
             System.out.println("2. No");
             String userChoice = scanner.nextLine();
             if ("1".equals(userChoice)) {
-                System.out.println("You picked up the smelly cheese!");
+                System.out.println("You ate the TACOS and feel stronger!");
                 hero.setAttackPower(hero.getAttackPower() + 10);
             } else if ("2".equals(userChoice)) {
-                System.out.println("You left the smelly cheese on the ground.");
+                System.out.println("You left the TACOS. Maybe you wanted MOMOS? .");
+            } else {
+                System.out.println("Please select a character by entering '1', '2', or '3'");
             }
         }
     }
 
     private void showCombatMessage() {
-        System.out.println("An enemy appeared! Your stats are: ");                                                          //added
+        System.out.println("An enemy appeared! Your stats are: "); //added
+        //print out monster hp
         System.out.println("Hero: " + hero.getName() + " HP: " + hero.getHp() + " Attack Power: " + hero.getAttackPower());      //added
+        System.out.println("Monster HP: " + monster.getMonsterHP());
         System.out.println("What do you do?");
         System.out.println("1. Attack");
         System.out.println("2. Use Special skills");
         System.out.println("3. Use an item");
     }
 
-
-    //enemy drops an item    - Mark
 
 
     private void gameover() {
