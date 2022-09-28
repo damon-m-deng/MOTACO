@@ -64,10 +64,39 @@ public class Game {
                 } else if ("3".equals(userChoice)) {
                     useItems();
                 }
-            }
+            }                  dropItem(); //does this work TODO: test
             showCombatMessage();
         }
         gameover();
+    }
+
+    public void dropItem() {
+        int rand = (int) ((Math.random() * 2) + 1);
+        if (rand == 1) {
+            System.out.println("The enemy dropped a potion!");
+            System.out.println("Do you want to pick it up?");
+            System.out.println("1. Yes");
+            System.out.println("2. No");
+            String userChoice = scanner.nextLine();
+            if ("1".equals(userChoice)) {
+                System.out.println("You picked up the potion!");
+                hero.setHp(hero.getHp() + 10);
+            } else if ("2".equals(userChoice)) {
+                System.out.println("You left the potion on the ground.");
+            }
+        } else if (rand == 2) {
+            System.out.println("The enemy dropped smelly cheese!");
+            System.out.println("Do you want to pick it up?");
+            System.out.println("1. Yes");
+            System.out.println("2. No");
+            String userChoice = scanner.nextLine();
+            if ("1".equals(userChoice)) {
+                System.out.println("You picked up the smelly cheese!");
+                hero.setAttackPower(hero.getAttackPower() + 10);
+            } else if ("2".equals(userChoice)) {
+                System.out.println("You left the smelly cheese on the ground.");
+            }
+        }
     }
 
     private void showCombatMessage() {
@@ -77,6 +106,10 @@ public class Game {
         System.out.println("2. Use Special skills");
         System.out.println("3. Use an item");
     }
+
+
+    //enemy drops an item    - Mark
+
 
     private void gameover() {
         System.out.println(user.getUserName() + ", You died...");
@@ -100,17 +133,29 @@ public class Game {
         hero.setHp(heroHp);
         System.out.println(monster.getName() + " attacked the " + hero.getName() + ", " + hero.getName() + " has " + heroHp + " HP left!");
         monster.setAttackPower(((int) ((Math.random() * 9) + 1)));
+
     }
 
     private void generateMonster() {
         monster = MonstersFactory.generateMonster(rand);
     }
 
-    public void useSpecialSkill() {
-
+    public void useSpecialSkill() {     //TODO: add special skill
+        System.out.println("You used your special skill!");
     }
+//        if (hero instanceof Wizard) {
+//            ((Wizard) hero).useSpecialSkill();
+//        } else if (hero instanceof WarriorPrincess) {
+//            ((WarriorPrincess) hero).useSpecialSkill();
+//        } else if (hero instanceof WaywardKnight) {
+//            ((WaywardKnight) hero).useSpecialSkill();
+//        }
+
+
 
     public void useItems() {
+        System.out.println("You used an item!");
+
 
     }
 
