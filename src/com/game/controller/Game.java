@@ -101,53 +101,113 @@ public class Game {
             fight();
         }
     }
-
-    public void fight() {
-        System.out.println("You have entered a fight!");
-        System.out.println("-----------------------");
-        showCombatMessage();
-        while (hero.hp > 0) {
-            String userChoice = scanner.nextLine();
-            if (hero.getHp() > 0 && monster.getMonsterHP()>0) {
-                if ("1".equals(userChoice)) {
-                    attack();
-                } else if ("2".equals(userChoice)) {
-                    useSpecialSkill();
-                } else if ("3".equals(userChoice)) {
-                    useItems();
-
-                }
-            }
-            else if(monster.getMonsterHP()<=0){
-                victory();
-                continueGame();
-                break;
-            }
-            else if(hero.getHp()<=0){
-                gameover();
-            }
+        //////Compare             TODO: Compare and use what you like
+        public void fight() {
+            System.out.println("You have entered a fight!");
+            System.out.println("-----------------------");
             showCombatMessage();
+            while (hero.hp > 0) {
+                String userChoice = scanner.nextLine();
+                if (hero.getHp() > 0 && monster.getMonsterHP() > 0) {
+                    if ("1".equals(userChoice)) {
+                        attack();
+                    } else if ("2".equals(userChoice)) {
+                        useSpecialSkill();
+                    } else if ("3".equals(userChoice)) {
+                        useItems();
+//                        continueGame();                               //commented out for now
+                    } else if ("4".equals(userChoice)) {
+                        System.out.println("You ran away!");
+                        System.out.println("You lost 10 HP falling over rocks and logs to get " +   //TODO: Check out this option to run away!
+                                "away!");
+                        hero.setHp(hero.getHp() - 10);
+                        System.out.println("Your HP is now " + hero.getHp());
+                        System.out.println("You have " + hero.getHp() + " HP left.");
+                    }
+                } else if (monster.getMonsterHP() <= 0) {
+                    dropItem();
+                }
+                showCombatMessage();
+            }
+            gameover();
+            continueAfterDeath();
+            System.out.println();
         }
-    }
 
-    private void continueGame() {
-        while(true) {
-            System.out.println("Would you like to continue?");
-            System.out.println("1: Yes");
+
+    //method to continue game after hero dies
+    public void continueAfterDeath() {
+        //if hero dies, ask if they want to continue
+        System.out.println("You have died. Do you want to continue?");
+        System.out.println("1. Yes");
+        System.out.println("2. No");
+        String userChoice = scanner.nextLine();
+        if ("1".equals(userChoice)) {
+            start();
+        } else if ("2".equals(userChoice)) {
+            System.out.println("Are you sure?");
+            System.out.println("1. Yes");
             System.out.println("2. No");
-
-            Scanner scanner = new Scanner(System.in);
-            String userInput = scanner.nextLine();
-            if ("1".equals(userInput)) {
-                fight();
-            } else if ("2".equals(userInput)) {
-                System.out.println("Thank you for playing MOTACO!");
-                break;
-            } else {
-                System.out.println("please select, [1-Yes/2-No]");
+            String userChoice2 = scanner.nextLine();
+            if ("1".equals(userChoice2)) {
+                System.out.println("Thank you for playing!");
+                System.exit(0);
+            } else if ("2".equals(userChoice2)) {
+                continueAfterDeath();
+                System.out.println();
             }
         }
+
     }
+
+
+    ///// Compare to above
+//    public void fight() {
+//        System.out.println("You have entered a fight!");
+//        System.out.println("-----------------------");
+//        showCombatMessage();
+//        while (hero.hp > 0) {
+//            String userChoice = scanner.nextLine();
+//            if (hero.getHp() > 0 && monster.getMonsterHP()>0) {
+//                if ("1".equals(userChoice)) {
+//                    attack();
+//                } else if ("2".equals(userChoice)) {
+//                    useSpecialSkill();
+//                } else if ("3".equals(userChoice)) {
+//                    useItems();
+//
+//                }
+//            }
+//            else if(monster.getMonsterHP()<=0){
+//                victory();
+//                continueGame();
+//                break;
+//            }
+//            else if(hero.getHp()<=0){
+//                gameover();
+//            }
+//            showCombatMessage();
+//        }
+//    }
+//
+//    private void continueGame() {
+//        while(true) {
+//            System.out.println("Would you like to continue?");
+//            System.out.println("1: Yes");
+//            System.out.println("2. No");
+//
+//            Scanner scanner = new Scanner(System.in);
+//            String userInput = scanner.nextLine();
+//            if ("1".equals(userInput)) {
+//                fight();
+//            } else if ("2".equals(userInput)) {
+//                System.out.println("Thank you for playing MOTACO!");
+//                break;
+//            } else {
+//                System.out.println("please select, [1-Yes/2-No]");
+//            }
+//        }
+//    }
 
     public void dropItem() {
         int rand = (int) ((Math.random() * 2) + 1);
