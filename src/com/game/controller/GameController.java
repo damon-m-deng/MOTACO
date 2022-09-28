@@ -12,4 +12,4 @@ class GameController {
         Game game = new Game();
         game.start();
     }
-}   
+}                                                  
