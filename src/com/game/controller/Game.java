@@ -23,7 +23,7 @@ public class Game {
     public void start(){
         asciiGen = AsciiFactory.createAscii();
         //print title ascii
-        loadAsciiTitle(title);
+        //loadAsciiTitle(title);
         welcomeScreen();
 
         user = UserFactory.createUser(scanner);
@@ -169,7 +169,7 @@ public class Game {
     private void gameover() {
         System.out.println(user.getUserName() + ", You died...");
         //print gameover ascii
-        loadAsciiTitle(gameOverText);
+        //loadAsciiTitle(gameOverText);
     }
 
     private void victory() {
