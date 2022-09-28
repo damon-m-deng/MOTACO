@@ -3,6 +3,7 @@ package com.game.characters;
 public class WaywardKnight extends Heroes {
     private int energy = 100;
     private Heroes heroes;
+    private final String name = "Wayward Knight";
 
     public WaywardKnight() {
 
@@ -32,5 +33,9 @@ public class WaywardKnight extends Heroes {
 
     public void setEnergy(int energy) {
         this.energy = energy;
+    }
+
+    public String getName() {
+        return name;
     }
 }

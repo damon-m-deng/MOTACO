@@ -4,7 +4,7 @@ public class Wizard extends Heroes {
 
     private int mp = 100;
     private int attack = 5;
-    private String heroClass = "Wizard";
+    private final String name = "Wizard";
 
     protected Wizard() {
 
@@ -42,13 +42,13 @@ public class Wizard extends Heroes {
         this.mp = mp;
     }
 
-    String getHeroClass() {
-        return heroClass;
+    public String getName() {
+        return name;
     }
 
     @Override
     public String toString() {
-        return "Hero Class="+this.getHeroClass()+" "+super.getName()+
+        return "Hero Class="+this.getName()+" "+super.getName()+
                 ", hp=" + super.getHp() + ", "+
                 "mp=" + this.getMp();
     }

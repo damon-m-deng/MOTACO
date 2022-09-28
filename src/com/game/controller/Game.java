@@ -9,15 +9,26 @@ import java.util.*;
 
 
 public class Game {
-    private Scanner scanner = new Scanner(System.in);
-    Heroes hero = HeroesFactory.createHeroes(scanner);
-    private int rand = (int) ((Math.random() * 2) + 1);
+    User user;
+    Heroes hero;
     Monsters monster = null;
 
-    public void playerSetUp() {
-        System.out.println("Hello " + hero.getName() + ". Let's start the game!");
-    }
+    private Scanner scanner = new Scanner(System.in);
+    private int rand = (int) ((Math.random() * 2) + 1);
 
+    public void start(){
+        user = UserFactory.createUser(scanner);
+        playerSetUp();
+
+        hero = HeroesFactory.createHeroes(scanner);
+        firstMission();
+    }
+    public void playerSetUp() {
+        System.out.println("Greetings, my Hero! \nWhat should I call you?");
+        user.setUserName(scanner.nextLine());
+        System.out.printf("Welcome, %s!%nPlease choose a hero of your choice!", user.getUserName());
+        System.out.println();
+    }
 
     // first mission
     public void firstMission() {
@@ -40,7 +51,7 @@ public class Game {
     }
 
     public void fight() {
-        System.out.println("You have enter a fight!");
+        System.out.println("You have entered a fight!");
         System.out.println("-----------------------");
         showCombatMessage();
         while (hero.hp > 0) {
@@ -68,7 +79,7 @@ public class Game {
     }
 
     private void gameover() {
-        System.out.println("You died...");
+        System.out.println(user.getUserName() + ", You died...");
     }
 
     private void victory() {
