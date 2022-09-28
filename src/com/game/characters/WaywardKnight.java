@@ -31,6 +31,10 @@ public class WaywardKnight extends Heroes {
         System.out.println("Smash the enemy with your shield, like a cheap version of the hulk");
     }
 
+    public int getEnergy() {
+        return energy;
+    }
+
     public void setEnergy(int energy) {
         this.energy = energy;
     }

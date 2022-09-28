@@ -23,6 +23,7 @@ public class Wizard extends Heroes {
             System.out.println("What Wizard skill you would like to use?");
             System.out.println("1: Frost Bolt");
             System.out.println("2. Mana Shield");
+            System.out.println("Wizard mana = "+ getMp());
             Scanner scanner = new Scanner(System.in);
             String userInput = scanner.nextLine();
             if ("1".equals(userInput)) {
@@ -38,8 +39,8 @@ public class Wizard extends Heroes {
     }
 
     private void frostBolt() {
-        System.out.println("The Wizard casts the spell: frost bolt, the damage increases by 100%.");
-        int frostBoltDamage = getAttackPower();
+        System.out.println("The Wizard casts the spell: frost bolt, the damage increases by 150%.");
+        int frostBoltDamage = (int)(getAttackPower() *2.5);
         setAttackPower(frostBoltDamage);
         if (mp > 20) {
             mp = mp - 20;
@@ -50,7 +51,7 @@ public class Wizard extends Heroes {
 
     void manaShield() {
         System.out.println("The Wizard casts the spell: manaShield. The wizard gained a shield");
-        int shield = this.getMp()* 2;
+        int shield = this.getMp();
         if (mp > 30) {
             hp = hp+shield;
             mp = mp - 30;
