@@ -8,7 +8,7 @@ public class UserFactory {
 
     }
 
-    public static User createUser(Scanner scanner) {
+    public static User createUser(Scanner scanner) { //TODO: what is scanner doing here??
         return new User();
     }
 }
