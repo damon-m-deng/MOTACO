@@ -8,8 +8,8 @@ import java.util.Scanner;
 public abstract class Heroes   {
 
     private String name;
-    public int hp = 100;
-    private int attackPower = (int) ((Math.random() * 9) + 1);
+    public int hp = 50;
+    private int attackPower = (int) ((Math.random() * 19) + 1);
 
     Prompter prompter = new Prompter(new Scanner(System.in));
 
