@@ -6,8 +6,8 @@ public class Monsters {
     // the number of rounds for monster's special skill
     private int duration;
     private String monsterName = null;
-    private int monsterHP = 100;
-    private int attackPower = (int) ((Math.random() * 9) + 1);
+    private int monsterHP = 50;
+    private int attackPower = (int) ((Math.random() * 19) + 1);
 
     // Dice: randomly gets a number between 1-6
     public int monstersDice(){

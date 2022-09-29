@@ -50,8 +50,8 @@ public class WarriorPrincess extends Heroes {
     public void useSpecialAbility(){
         while(true) {
             System.out.println("What Wizard skill you would like to use?");
-            System.out.println("1: Heal");
-            System.out.println("2. Enrage");
+            System.out.println("1: Heal. Warrior Princess will heal her wound.");
+            System.out.println("2. Enrage. Warrior Princess will enter the berserk mode to create more damage.");
             System.out.println("Warrior Princess Rage = "+ getRage());
             Scanner scanner = new Scanner(System.in);
             String userInput = scanner.nextLine();
