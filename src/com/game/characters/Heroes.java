@@ -1,17 +1,11 @@
 package com.game.characters;
 
-import com.apps.util.Prompter;
-
-import javax.management.monitor.MonitorSettingException;
-import java.util.Scanner;
-
-public abstract class Heroes   {
+public abstract class Heroes {
 
     private String name;
     public int hp = 50;
     private int attackPower = (int) ((Math.random() * 19) + 1);
 
-    Prompter prompter = new Prompter(new Scanner(System.in));
 
     protected Heroes() {
     }
@@ -21,28 +15,7 @@ public abstract class Heroes   {
         setHp(hp);
     }
 
-    // Dice: randomly gets a number between 1-6
-    public int HeroesDice(){
-        return (int) ((Math.random() * 5) + 1);
-    }
-
-    public void attack(){
-
-    }
-
-    public void defend(){
-
-    }
-
-    public void eat(){
-
-    }
-
-    public void run(){
-
-    }
-
-    public void useSpecialAbility(){
+    public void useSpecialAbility() {
 
     }
 
@@ -74,6 +47,6 @@ public abstract class Heroes   {
     public String toString() {
         return
                 "name='" + name + '\'' +
-                ", hp=" + hp ;
+                        ", hp=" + hp;
     }
 }

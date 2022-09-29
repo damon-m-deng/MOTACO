@@ -17,7 +17,7 @@ public class GiantRat extends Monsters {
     }
 
     @Override
-    public void useSpecialAbility(){
+    public void useSpecialAbility() {
         lickTheWound();
     }
 

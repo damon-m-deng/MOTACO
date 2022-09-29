@@ -3,20 +3,17 @@ package com.game.characters;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Random;
 
 public class MonstersFactory {
 
     // generate a random number [1-3] to select one of the 3 kinds of monsters
-
-
-    private MonstersFactory(){
+    private MonstersFactory() {
     }
 
-    public static Monsters generateMonster(int rand){
+    public static Monsters generateMonster(int rand) {
         Monsters monster = null;
 
-        if(rand == 1){
+        if (rand == 1) {
             monster = new GiantRat();
             try (BufferedReader br =
                          new BufferedReader(new FileReader("images/giantRat.txt"))) {
@@ -27,8 +24,7 @@ public class MonstersFactory {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-        else if(rand == 2){
+        } else if (rand == 2) {
             monster = new SkeletonKnight();
             try (BufferedReader br =
                          new BufferedReader(new FileReader("images/skeletonKnight.txt"))) {
@@ -39,8 +35,7 @@ public class MonstersFactory {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-        else if(rand == 3){
+        } else if (rand == 3) {
             monster = new Mermaid();
             try (BufferedReader br =
                          new BufferedReader(new FileReader("images/mermaid.txt"))) {

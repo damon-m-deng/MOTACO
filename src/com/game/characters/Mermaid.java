@@ -9,7 +9,7 @@ class Mermaid extends Monsters {
     }
 
     @Override
-    public void useSpecialAbility(){
+    public void useSpecialAbility() {
 
     }
 }

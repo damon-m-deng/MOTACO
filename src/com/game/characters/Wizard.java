@@ -12,18 +12,13 @@ public class Wizard extends Heroes {
 
     }
 
-    protected Wizard(String name, int hp, int mp) {
-        super(name, hp);
-        setMp(mp);
-    }
-
     @Override
     public void useSpecialAbility() {
-        while(true) {
+        while (true) {
             System.out.println("What Wizard skill you would like to use?");
             System.out.println("1: Frost Bolt: Will increase your attack damage");
             System.out.println("2. Mana Shield: Will cast a shield that absorbs damage");
-            System.out.println("Wizard mana = "+ getMp());
+            System.out.println("Wizard mana = " + getMp());
             Scanner scanner = new Scanner(System.in);
             String userInput = scanner.nextLine();
             if ("1".equals(userInput)) {
@@ -40,7 +35,7 @@ public class Wizard extends Heroes {
 
     private void frostBolt() {
         System.out.println("The Wizard casts the spell: [Frost Bolt], the damage increases by 150%.");
-        int frostBoltDamage = (int)(getAttackPower() *2.5);
+        int frostBoltDamage = (int) (getAttackPower() * 2.5);
         setAttackPower(frostBoltDamage);
         if (mp > 20) {
             mp = mp - 20;
@@ -53,7 +48,7 @@ public class Wizard extends Heroes {
         System.out.println("The Wizard casts the spell: [Mana Shield], the wizard gained a shield");
         int shield = this.getMp();
         if (mp > 30) {
-            hp = hp+shield;
+            hp = hp + shield;
             mp = mp - 30;
         } else {
             System.out.println("Not enough mana...");
