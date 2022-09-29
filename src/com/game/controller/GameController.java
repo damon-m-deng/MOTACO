@@ -2,6 +2,7 @@ package com.game.controller;
 
 import com.apps.util.Console;
 import com.game.characters.*;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -82,26 +83,34 @@ public class GameController {
         System.out.println("2. Go home.");
         System.out.println();
 
-        String userChoice = scanner.nextLine();
+        String userChoice = null;
 
-
-            if ("1".equals(userChoice)) {
-                hero.setHp(hero.getHp() - 5);
-                System.out.println("The hero went to the north... Stepped on a banana peel, and fell on their bottom. You lost 5 HP. Ouch...");
-                Console.pause(500);
-                System.out.println();
-
-                generateMonster();
-                System.out.println("You ran into a " + monster.getName());
-                fight();
-            } else if ("2".equals(userChoice)) {
-                continueGame();
-            } else {
+        while(true){
+            userChoice = scanner.nextLine();
+            if(!(userChoice.matches("1|2"))){
                 System.out.println("please select, [1-Fight /2-Go home]");
-                System.out.println();
             }
+            else{
+                System.out.println("You stepped out the gate of your village. What do you do?");
+                System.out.println("1. Go fight monsters!!!");
+                System.out.println("2. Go home.");
+                System.out.println();
+                break;
+            }
+        }
 
+        if ("1".equals(userChoice)) {
+            hero.setHp(hero.getHp() - 5);
+            System.out.println("The hero went to the north... Stepped on a banana peel, and fell on their bottom. You lost 5 HP. Ouch...");
+            Console.pause(500);
+            System.out.println();
 
+            generateMonster();
+            System.out.println("You ran into a " + monster.getName());
+            fight();
+        } else if ("2".equals(userChoice)) {
+            continueGame();
+        }
     }
 
     public void fight() {
