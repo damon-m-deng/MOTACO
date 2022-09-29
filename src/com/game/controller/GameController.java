@@ -125,6 +125,9 @@ public class GameController {
                 } else if ("2".equals(userChoice)) {
                     useSpecialSkill();
                 }
+                else{
+                    System.out.println("Please select 1: Attack, 2. Use Special Skills.");
+                }
             }
             Console.pause(1000);
 
