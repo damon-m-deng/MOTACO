@@ -85,12 +85,11 @@ public class GameController {
 
         String userChoice = null;
 
-        while(true){
+        while (true) {
             userChoice = scanner.nextLine();
-            if(!(userChoice.matches("1|2"))){
+            if (!(userChoice.matches("1|2"))) {
                 System.out.println("please select, [1-Fight /2-Go home]");
-            }
-            else{
+            } else {
                 System.out.println("You stepped out the gate of your village. What do you do?");
                 System.out.println("1. Go fight monsters!!!");
                 System.out.println("2. Go home.");

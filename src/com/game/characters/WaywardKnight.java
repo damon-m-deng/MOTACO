@@ -18,13 +18,13 @@ public class WaywardKnight extends Heroes {
 
     @Override
     public void useSpecialAbility() {
-        while(true) {
+        while (true) {
             System.out.println("What Wayward Knight skill you would like to use?");
             System.out.println("1: Shred Classical Guitar: Mesmerize the enemy with your guitar " +
                     "skills and increase your attack damage by 1.5x");
             System.out.println("2. Shield Smash: Smash your enemy and multiply your attack damage" +
                     " by 1.3x");
-            System.out.println("Wayward Knight energy = "+ getEnergy());
+            System.out.println("Wayward Knight energy = " + getEnergy());
             Scanner scanner = new Scanner(System.in);
             String userInput = scanner.nextLine();
             if ("1".equals(userInput)) {

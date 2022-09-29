@@ -15,17 +15,16 @@ public class WarriorPrincess extends Heroes {
 
     public WarriorPrincess(String name, int hp, int rage) {
         super(name, hp);
-        this.rage= rage;
+        this.rage = rage;
     }
 
     // generate HP by consuming rage
     void heal() {
         System.out.println("The Warrior Princess casts the spell: Heal, her HP increases by 20.");
-        if(rage > 50){
-            this.setHp(this.getHp()+20);
+        if (rage > 50) {
+            this.setHp(this.getHp() + 20);
             rage = rage - 50;
-        }
-        else{
+        } else {
             System.out.println("Not enough rage");
         }
     }
@@ -33,7 +32,7 @@ public class WarriorPrincess extends Heroes {
     // increase attack power by 100%
     void enrage() {
         System.out.println("The Warrior Princess is now enraged, her damage increases by 100%.");
-        int enragedDamage = getAttackPower() *2;
+        int enragedDamage = getAttackPower() * 2;
         setAttackPower(enragedDamage);
         if (rage > 20) {
             rage = rage - 20;
@@ -42,17 +41,13 @@ public class WarriorPrincess extends Heroes {
         }
     }
 
-    void decreaseDamageTaken() {
-
-    }
-
     @Override
-    public void useSpecialAbility(){
-        while(true) {
+    public void useSpecialAbility() {
+        while (true) {
             System.out.println("What Warrior Princess skill you would like to use?");
             System.out.println("1: Heal. Warrior Princess will heal her wound.");
             System.out.println("2. Enrage. Warrior Princess will enter the berserk mode to create more damage.");
-            System.out.println("Warrior Princess Rage = "+ getRage());
+            System.out.println("Warrior Princess Rage = " + getRage());
             Scanner scanner = new Scanner(System.in);
             String userInput = scanner.nextLine();
             if ("1".equals(userInput)) {
