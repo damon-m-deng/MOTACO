@@ -14,7 +14,6 @@ public class GameController {
     User user;
     Heroes hero;
     Monsters monster = null;
-    AsciiGen asciiGen;
 
     private Scanner scanner = new Scanner(System.in);
     private int rand = (int) ((Math.random() * 2) + 1);
@@ -22,9 +21,6 @@ public class GameController {
     private String gameOverText = "GAME OVER";
 
     public void start() {
-        asciiGen = AsciiFactory.createAscii();
-        //print title ascii
-        //loadAsciiTitle(title);
         welcomeScreen();
 
         user = UserFactory.createUser(scanner);
@@ -88,12 +84,6 @@ public class GameController {
             }
         }
 
-    }
-
-    //method to generate ascii for the text
-    public void loadAsciiTitle(String text) {
-        AsciiGen.Settings settings = asciiGen.new Settings(new Font("SansSerif", Font.BOLD, 16), text.length() * 30, 30); // 30 pixel width per character
-        asciiGen.drawString(text, "|", settings);
     }
 
     // first mission
@@ -225,8 +215,6 @@ public class GameController {
 
     private void gameover() {
         System.out.println(user.getUserName() + ", You died...");
-        //print gameover ascii
-        //loadAsciiTitle(gameOverText);
     }
 
     private void victory() {
