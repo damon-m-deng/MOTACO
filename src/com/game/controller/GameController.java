@@ -198,7 +198,7 @@ public class GameController {
     }
 
     private void showCombatMessage() {
-        System.out.println("An enemy appeared! Your stats are: "); //added
+        System.out.println("Enemies nearby! Your stats are: "); //added
         //print out monster hp
         System.out.println();
         System.out.println("Hero: " + hero.getName() + " HP: " + hero.getHp() + " Attack Power: " + hero.getAttackPower());      //added
@@ -249,7 +249,7 @@ public class GameController {
     }
 
     public void useSpecialSkill() {
-        System.out.println("You used your special skill!");
+        System.out.println("You have a very particular set of skills!");
         if (hero instanceof Wizard) {
             ((Wizard) hero).useSpecialAbility();
             Console.pause(1000);
