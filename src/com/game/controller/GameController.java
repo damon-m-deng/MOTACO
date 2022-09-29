@@ -5,6 +5,7 @@ import com.game.characters.*;
 
 import java.awt.*;
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
@@ -37,27 +38,17 @@ public class GameController {
     public void welcomeScreen() {
 
         System.out.println("Welcome to the game!");
-        System.out.println("\n" +
-                "     e    e        ,88~-_   ~~~888~~~      e       e88~-_    ,88~-_             " +
-                " e      888~-_   Y88b      / 888~~  888b    | ~~~888~~~ 888   | 888~-_   888~~  " +
-                "\n" +
-                "    d8b  d8b      d888   \\     888        d8b     d888   \\  d888   \\         " +
-                "   d8b     888   \\   Y88b    /  888___ |Y88b   |    888    888   | 888   \\  " +
-                "888___ \n" +
-                "   d888bdY88b    88888    |    888       /Y88b    8888     88888    |          " +
-                "/Y88b    888    |   Y88b  /   888    | Y88b  |    888    888   | 888    | 888   " +
-                " \n" +
-                "  / Y88Y Y888b   88888    |    888      /  Y88b   8888     88888    |         / " +
-                " Y88b   888    |    Y888/    888    |  Y88b |    888    888   | 888   /  888    " +
-                "\n" +
-                " /   YY   Y888b   Y888   /     888     /____Y88b  Y888   /  Y888   /         " +
-                "/____Y88b  888   /      Y8/     888    |   Y88b|    888    Y88   | 888_-~   888 " +
-                "   \n" +
-                "/          Y888b   `88_-~      888    /      Y88b  \"88_-~    `88_-~         /  " +
-                "    Y88b 888_-~        Y      888___ |    Y888    888     \"8__/  888 ~-_  " +
-                "888___ \n" +
-                "                                                                                " +
-                "                                                                                \n");
+        //print from file in images folder
+        try (BufferedReader br = new BufferedReader(new FileReader("images/banner.txt"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println();        // spaces
+        System.out.println();        // spaces
 
         System.out.println("MOTACO - Chapter 1");
         System.out.println("A strange evil has taken over the land...");
