@@ -8,8 +8,6 @@ class Main {
         GameController game = new GameController();
         System.out.println();
         Console.pause(1000);
-        game.start();                      
-
-
+        game.start();
     }
 }
