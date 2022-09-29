@@ -205,7 +205,6 @@ public class GameController {
         System.out.println("What do you do?");
         System.out.println("1. Attack");
         System.out.println("2. Use Special skills");
-        System.out.println("3. Use an item");
         System.out.println();
     }
 
