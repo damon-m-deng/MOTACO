@@ -1,9 +1,10 @@
 package com.game.characters;
 
 import org.junit.Test;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
-import java.util.List;
-import static org.junit.Assert.*;
 
 public class test {
     @Test
@@ -11,5 +12,15 @@ public class test {
         System.out.println();
         Wizard wiz = new Wizard();
 
+        try (BufferedReader br =
+                     new BufferedReader(new FileReader("images/mermaid.txt"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
+
