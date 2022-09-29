@@ -49,7 +49,7 @@ public class WarriorPrincess extends Heroes {
     @Override
     public void useSpecialAbility(){
         while(true) {
-            System.out.println("What Wizard skill you would like to use?");
+            System.out.println("What Warrior Princess skill you would like to use?");
             System.out.println("1: Heal. Warrior Princess will heal her wound.");
             System.out.println("2. Enrage. Warrior Princess will enter the berserk mode to create more damage.");
             System.out.println("Warrior Princess Rage = "+ getRage());
