@@ -2,12 +2,9 @@ package com.game.controller;
 
 import com.apps.util.Console;
 import com.game.characters.*;
-
-import java.awt.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.*;
 
 
@@ -16,7 +13,7 @@ public class GameController {
     Heroes hero;
     Monsters monster = null;
 
-    private Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
     private int rand = (int) ((Math.random() * 2) + 1);
     private String title = "MOTACO";
     private String gameOverText = "GAME OVER";
@@ -62,7 +59,7 @@ public class GameController {
     public void playerSetUp() {
         System.out.println("Greetings, my Hero! \nWhat should I call you?");
 
-        while(true) {
+        while (true) {
             String userInput = scanner.nextLine();
             if (userInput.length() == 0) {
                 System.out.println("Please enter your name: ");
@@ -79,16 +76,18 @@ public class GameController {
 
     // first mission
     public void firstMission() {
-        while(true) {
-            System.out.println("You stepped out the gate of your village. What do you do?");
-            System.out.println("1. Go North.");
-            System.out.println("2. Go South.");
-            System.out.println();
 
-            String userChoice = scanner.nextLine();
+        System.out.println("You stepped out the gate of your village. What do you do?");
+        System.out.println("1. Go fight monsters!!!");
+        System.out.println("2. Go home.");
+        System.out.println();
+
+        String userChoice = scanner.nextLine();
+
+
             if ("1".equals(userChoice)) {
                 hero.setHp(hero.getHp() - 5);
-                System.out.println("The hero went to the north... Stepped on a banana peel, and fell on their bottom. Ouch...");
+                System.out.println("The hero went to the north... Stepped on a banana peel, and fell on their bottom. You lost 5 HP. Ouch...");
                 Console.pause(500);
                 System.out.println();
 
@@ -96,47 +95,46 @@ public class GameController {
                 System.out.println("You ran into a " + monster.getName());
                 fight();
             } else if ("2".equals(userChoice)) {
-                generateMonster();
-                System.out.println("You ran into a " + monster.getName());
-                fight();
-            }
-            else{
-                System.out.println("please select, [1-North/2-South]");
+                continueGame();
+            } else {
+                System.out.println("please select, [1-Fight /2-Go home]");
                 System.out.println();
             }
-        }
+
+
     }
 
     public void fight() {
         System.out.println("You have entered a fight!");
         System.out.println("-----------------------");
         showCombatMessage();
-        while (hero.hp > 0) {
+
+        while (true) {
             String userChoice = scanner.nextLine();
-            if (hero.getHp() > 0 && monster.getMonsterHP()>0) {
+            if (hero.getHp() > 0 && monster.getMonsterHP() > 0) {
                 if ("1".equals(userChoice)) {
                     attack();
                 } else if ("2".equals(userChoice)) {
                     useSpecialSkill();
                 }
             }
-            else if(monster.getMonsterHP()<=0){
+            Console.pause(1000);
+
+
+            if (hero.getHp() <= 0) {
+                gameover();
+                break;
+            } else if (monster.getMonsterHP() <= 0) {
                 victory();
                 continueGame();
                 break;
             }
-            else if(hero.getHp()<=0){
-                gameover();
-            }
-            Console.pause(1000);
-            showCombatMessage();
 
-            Console.clear();
         }
     }
 
     private void continueGame() {
-        while(true) {
+        while (true) {
             System.out.println("Would you like to continue?");
             Console.pause(1000);
             System.out.println("1: Yes");
@@ -146,7 +144,7 @@ public class GameController {
             Scanner scanner = new Scanner(System.in);
             String userInput = scanner.nextLine();
             if ("1".equals(userInput)) {
-                fight();
+                firstMission();
             } else if ("2".equals(userInput)) {
                 System.out.println("Thank you for playing MOTACO!");
                 break;
@@ -159,7 +157,7 @@ public class GameController {
     public void dropItem() {
         int rand = (int) ((Math.random() * 2) + 1);
         if (rand == 1) {
-            System.out.println("The enemy dropped a MOMO which is a delicious treat!"); //TODO: make these items enum
+            System.out.println("The enemy dropped a MOMO which is a delicious treat!");
             System.out.println("Do you want to pick it up?");
             System.out.println("1. Yes");
             System.out.println("2. No");
@@ -209,48 +207,60 @@ public class GameController {
     }
 
     private void victory() {
-        System.out.println("-------Victory!!!-------");
+        System.out.println("******************************");
+        System.out.println("----------Victory!!!----------");
+        System.out.println("******************************");
+        System.out.println();
         dropItem();
     }
 
     private void attack() {
+        int heroHp = hero.getHp();
+        heroHp = heroHp - monster.getAttackPower();
+        hero.setHp(heroHp);
+        if (hero.getHp() > 0) {
+            System.out.println(monster.getName() + " attacked the " + hero.getName() + ", " + hero.getName() + " has " + heroHp + " HP left!");
+        }
+
+        generateResource();
+        monster.setAttackPower(((int) ((Math.random() * 9) + 1)));
+        System.out.println();
+
+        Console.pause(1000);
 
         int monsterHp = monster.getMonsterHP();
         monsterHp = monsterHp - hero.getAttackPower();
         monster.setMonsterHP(monsterHp);
-        System.out.println(hero.getName() + " attacked the " + monster.getName() + ", " + monster.getName() + " has " + monsterHp + " HP left!");
+        if (monster.getMonsterHP() > 0) {
+            System.out.println(hero.getName() + " attacked the " + monster.getName() + ", " + monster.getName() + " has " + monsterHp + " HP left!");
+            showCombatMessage();
+        } else {
+            System.out.println("You killed " + monster.getName());
+        }
         hero.setAttackPower(((int) ((Math.random() * 9) + 1)));
         System.out.println();
 
-        Console.pause(1000);
 
-        int heroHp = hero.getHp();
-        heroHp = heroHp - monster.getAttackPower();
-        hero.setHp(heroHp);
-        System.out.println(monster.getName() + " attacked the " + hero.getName() + ", " + hero.getName() + " has " + heroHp + " HP left!");
-        monster.setAttackPower(((int) ((Math.random() * 9) + 1)));
-        System.out.println();
-
-        generateResource();
-        Console.pause(1000);
     }
 
     private void generateMonster() {
         monster = MonstersFactory.generateMonster(rand);
     }
 
-    public void useSpecialSkill() {
+    private void useSpecialSkill() {
         System.out.println("You have a very particular set of skills!");
         if (hero instanceof Wizard) {
             ((Wizard) hero).useSpecialAbility();
-            Console.pause(1000);
+
         } else if (hero instanceof WarriorPrincess) {
             ((WarriorPrincess) hero).useSpecialAbility();
-            Console.pause(1000);
+
         } else if (hero instanceof WaywardKnight) {
             ((WaywardKnight) hero).useSpecialAbility();
-            Console.pause(1000);
+
         }
+
+        showCombatMessage();
     }
 
     private void generateResource() {
@@ -273,15 +283,3 @@ public class GameController {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
